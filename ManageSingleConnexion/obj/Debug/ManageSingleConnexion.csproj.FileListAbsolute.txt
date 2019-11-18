@@ -1,0 +1,5 @@
+E:\DAVID\PROJETBDD\QuinkaStock\ManageSingleConnexion\bin\Debug\ManageSingleConnexion.dll
+E:\DAVID\PROJETBDD\QuinkaStock\ManageSingleConnexion\bin\Debug\ManageSingleConnexion.pdb
+E:\DAVID\PROJETBDD\QuinkaStock\ManageSingleConnexion\obj\Debug\ManageSingleConnexion.dll
+E:\DAVID\PROJETBDD\QuinkaStock\ManageSingleConnexion\obj\Debug\ManageSingleConnexion.pdb
+E:\DAVID\PROJETBDD\QuinkaStock\ManageSingleConnexion\obj\Debug\ManageSingleConnexion.csprojResolveAssemblyReference.cache

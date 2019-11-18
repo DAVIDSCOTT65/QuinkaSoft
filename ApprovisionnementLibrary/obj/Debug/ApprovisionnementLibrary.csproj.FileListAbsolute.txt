@@ -1,0 +1,9 @@
+E:\DAVID\PROJETBDD\QuinkaStock\ApprovisionnementLibrary\bin\Debug\ApprovisionnementLibrary.dll
+E:\DAVID\PROJETBDD\QuinkaStock\ApprovisionnementLibrary\bin\Debug\ApprovisionnementLibrary.pdb
+E:\DAVID\PROJETBDD\QuinkaStock\ApprovisionnementLibrary\bin\Debug\ManageSingleConnexion.dll
+E:\DAVID\PROJETBDD\QuinkaStock\ApprovisionnementLibrary\bin\Debug\ParametreConnection.dll
+E:\DAVID\PROJETBDD\QuinkaStock\ApprovisionnementLibrary\bin\Debug\ManageSingleConnexion.pdb
+E:\DAVID\PROJETBDD\QuinkaStock\ApprovisionnementLibrary\bin\Debug\ParametreConnection.pdb
+E:\DAVID\PROJETBDD\QuinkaStock\ApprovisionnementLibrary\obj\Debug\ApprovisionnementLibrary.csprojResolveAssemblyReference.cache
+E:\DAVID\PROJETBDD\QuinkaStock\ApprovisionnementLibrary\obj\Debug\ApprovisionnementLibrary.dll
+E:\DAVID\PROJETBDD\QuinkaStock\ApprovisionnementLibrary\obj\Debug\ApprovisionnementLibrary.pdb

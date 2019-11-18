@@ -1,0 +1,9 @@
+E:\DAVID\PROJETBDD\QuinkaStock\SortieLibrary\bin\Debug\SortieLibrary.dll
+E:\DAVID\PROJETBDD\QuinkaStock\SortieLibrary\bin\Debug\SortieLibrary.pdb
+E:\DAVID\PROJETBDD\QuinkaStock\SortieLibrary\bin\Debug\ManageSingleConnexion.dll
+E:\DAVID\PROJETBDD\QuinkaStock\SortieLibrary\bin\Debug\ParametreConnection.dll
+E:\DAVID\PROJETBDD\QuinkaStock\SortieLibrary\bin\Debug\ManageSingleConnexion.pdb
+E:\DAVID\PROJETBDD\QuinkaStock\SortieLibrary\bin\Debug\ParametreConnection.pdb
+E:\DAVID\PROJETBDD\QuinkaStock\SortieLibrary\obj\Debug\SortieLibrary.csprojResolveAssemblyReference.cache
+E:\DAVID\PROJETBDD\QuinkaStock\SortieLibrary\obj\Debug\SortieLibrary.dll
+E:\DAVID\PROJETBDD\QuinkaStock\SortieLibrary\obj\Debug\SortieLibrary.pdb
