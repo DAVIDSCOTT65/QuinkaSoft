@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UtilisateurLibrary
+namespace GUI.Classes
 {
-    public class Monitoring
+    public class ClsMonitoring
     {
         int i = 0;
         public int Num { get; set; }
@@ -20,8 +20,8 @@ namespace UtilisateurLibrary
         public int Ref_Agent { get; set; }
         public string Noms { get; set; }
         public string Fonction { get; set; }
-        public string UserSession { get; set; }
-        public void Enregistrer(Monitoring mon)
+        //public string UserSession { get; set; }
+        public void Enregistrer(ClsMonitoring mon)
         {
             if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
                 ImplementeConnexion.Instance.Conn.Open();
@@ -31,14 +31,14 @@ namespace UtilisateurLibrary
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@operation", 50, DbType.String, mon.Operation));
-                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@refagent", 5, DbType.Int32, UserSession));
+                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@refagent", 5, DbType.Int32, UserSession.GetInstance().Id));
 
                 cmd.ExecuteNonQuery();
             }
         }
-        public List<Monitoring> AllMonitoringToday()
+        public List<ClsMonitoring> AllMonitoringToday()
         {
-            List<Monitoring> lst = new List<Monitoring>();
+            List<ClsMonitoring> lst = new List<ClsMonitoring>();
 
             if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
                 ImplementeConnexion.Instance.Conn.Open();
@@ -58,9 +58,9 @@ namespace UtilisateurLibrary
 
             return lst;
         }
-        public List<Monitoring> Research(string recherche)
+        public List<ClsMonitoring> Research(string recherche)
         {
-            List<Monitoring> lst = new List<Monitoring>();
+            List<ClsMonitoring> lst = new List<ClsMonitoring>();
             if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
                 ImplementeConnexion.Instance.Conn.Open();
             using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
@@ -81,9 +81,9 @@ namespace UtilisateurLibrary
             }
             return lst;
         }
-        private Monitoring GetMonitoring(IDataReader dr)
+        private ClsMonitoring GetMonitoring(IDataReader dr)
         {
-            Monitoring mon = new Monitoring();
+            ClsMonitoring mon = new ClsMonitoring();
 
             i = i + 1;
 
@@ -99,4 +99,5 @@ namespace UtilisateurLibrary
             return mon;
         }
     }
+
 }

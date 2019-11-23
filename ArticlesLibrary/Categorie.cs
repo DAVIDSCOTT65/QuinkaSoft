@@ -13,6 +13,7 @@ namespace ArticlesLibrary
     {
         public int Id { get; set; }
         public string Designation { get; set; }
+        public string Code { get; set; }
         public int NewId()
         {
             if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
@@ -45,7 +46,7 @@ namespace ArticlesLibrary
 
                 cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@id", 5, DbType.Int32, categ.Id));
                 cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@designation", 100,DbType.String, categ.Designation));
-
+                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@code", 50, DbType.String, categ.Code));
                 cmd.ExecuteNonQuery();
 
             }

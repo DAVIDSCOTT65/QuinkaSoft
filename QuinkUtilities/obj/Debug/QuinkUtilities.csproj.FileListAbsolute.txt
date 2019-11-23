@@ -1,0 +1,9 @@
+E:\DAVID\PROJETBDD\QuinkaStock\QuinkUtilities\bin\Debug\QuinkUtilities.dll
+E:\DAVID\PROJETBDD\QuinkaStock\QuinkUtilities\bin\Debug\QuinkUtilities.pdb
+E:\DAVID\PROJETBDD\QuinkaStock\QuinkUtilities\bin\Debug\ManageSingleConnexion.dll
+E:\DAVID\PROJETBDD\QuinkaStock\QuinkUtilities\bin\Debug\ParametreConnection.dll
+E:\DAVID\PROJETBDD\QuinkaStock\QuinkUtilities\bin\Debug\ManageSingleConnexion.pdb
+E:\DAVID\PROJETBDD\QuinkaStock\QuinkUtilities\bin\Debug\ParametreConnection.pdb
+E:\DAVID\PROJETBDD\QuinkaStock\QuinkUtilities\obj\Debug\QuinkUtilities.csprojResolveAssemblyReference.cache
+E:\DAVID\PROJETBDD\QuinkaStock\QuinkUtilities\obj\Debug\QuinkUtilities.dll
+E:\DAVID\PROJETBDD\QuinkaStock\QuinkUtilities\obj\Debug\QuinkUtilities.pdb

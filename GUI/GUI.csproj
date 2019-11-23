@@ -46,6 +46,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\ClsMonitoring.cs" />
+    <Compile Include="Classes\DynamicClasses.cs" />
+    <Compile Include="Classes\Pubcon.cs" />
+    <Compile Include="Classes\UserSession.cs" />
+    <Compile Include="Forms\FrmApprovisionnement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmApprovisionnement.Designer.cs">
+      <DependentUpon>FrmApprovisionnement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmArticle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmArticle.Designer.cs">
+      <DependentUpon>FrmArticle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCategorie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCategorie.Designer.cs">
+      <DependentUpon>FrmCategorie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Frm_Connection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Frm_Connection.Designer.cs">
+      <DependentUpon>Frm_Connection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ParametreDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ParametreDB.Designer.cs">
+      <DependentUpon>ParametreDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Principale.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +88,27 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\UC_Approvisionnement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Approvisionnement.Designer.cs">
+      <DependentUpon>UC_Approvisionnement.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\FrmApprovisionnement.resx">
+      <DependentUpon>FrmApprovisionnement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmArticle.resx">
+      <DependentUpon>FrmArticle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmCategorie.resx">
+      <DependentUpon>FrmCategorie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Frm_Connection.resx">
+      <DependentUpon>Frm_Connection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ParametreDB.resx">
+      <DependentUpon>ParametreDB.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Principale.resx">
       <DependentUpon>Principale.cs</DependentUpon>
     </EmbeddedResource>
@@ -65,7 +120,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\UC_Approvisionnement.resx">
+      <DependentUpon>UC_Approvisionnement.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -80,9 +139,101 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Classes\" />
     <Folder Include="Reports\" />
-    <Folder Include="UserControls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shopping Cart Loaded_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cash in Hand_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Database Administrator_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Receipt_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Information_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Medal_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Info_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add Shopping Cart_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Categorize_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sell Stock_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buy_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_36px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ApprovisionnementLibrary\ApprovisionnementLibrary.csproj">
+      <Project>{033aba94-a768-4aec-aea9-68615291f0ee}</Project>
+      <Name>ApprovisionnementLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ArticlesLibrary\ArticlesLibrary.csproj">
+      <Project>{a6cdd015-46e0-4f3a-b6a7-73c455263802}</Project>
+      <Name>ArticlesLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CreanceLibrary\CreanceLibrary.csproj">
+      <Project>{005cbf6f-6bd2-4402-ba01-cd04e5aa0656}</Project>
+      <Name>CreanceLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ManageSingleConnexion\ManageSingleConnexion.csproj">
+      <Project>{30797c9a-be9e-4483-9686-60f977409ce0}</Project>
+      <Name>ManageSingleConnexion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ParametreConnection\ParametreConnection.csproj">
+      <Project>{90ad5d57-8909-433b-aaac-bbc90049f084}</Project>
+      <Name>ParametreConnection</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuinkUtilities\QuinkUtilities.csproj">
+      <Project>{887f6bb0-a387-4fca-a093-3f16526d8d48}</Project>
+      <Name>QuinkUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SortieLibrary\SortieLibrary.csproj">
+      <Project>{617c2429-b53c-4a8a-851b-bed6068ac13a}</Project>
+      <Name>SortieLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilisateurLibrary\UtilisateurLibrary.csproj">
+      <Project>{2db2e2fd-774b-4e2c-ad14-0ef6066d0182}</Project>
+      <Name>UtilisateurLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh_30px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

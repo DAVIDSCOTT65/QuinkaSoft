@@ -11,11 +11,19 @@ namespace ApprovisionnementLibrary
 {
     public class Detail_Approvisionnement
     {
+        int i = 0;
+        public int Num { get; set; }
         public int Id { get; set; }
         public double Quantite { get; set; }
         public double PAu { get; set; }
         public int RefArticle { get; set; }
         public int RefApprov { get; set; }
+        public string Code { get; set; }
+        public string Articles { get; set; }
+        public string Categorie { get; set; }
+        public string QuantiteA { get; set; }
+        public DateTime DateApprov { get; set; }
+        public string PAT { get; set; }
         public int NewId()
         {
             if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
@@ -66,7 +74,7 @@ namespace ApprovisionnementLibrary
                 ImplementeConnexion.Instance.Conn.Open();
             using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
             {
-                cmd.CommandText = "";
+                cmd.CommandText = "SELECT_APPROVISIONNEMENT";
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 IDataReader dr = cmd.ExecuteReader();
@@ -86,7 +94,16 @@ namespace ApprovisionnementLibrary
         {
             Detail_Approvisionnement da = new Detail_Approvisionnement();
 
-            
+            i = i + 1;
+
+            da.Num = i;
+            da.Code = dr["Code Article"].ToString();
+            da.Articles = dr["Articles"].ToString();
+            da.Categorie = dr["Catégorie"].ToString();
+            da.QuantiteA = dr["Quantité en stock"].ToString();
+            da.PAu = Convert.ToDouble(dr["PAu"].ToString());
+            da.DateApprov = Convert.ToDateTime(dr["Date_Approv"].ToString());
+            da.PAT = dr["PAt"].ToString();
 
 
             return da;

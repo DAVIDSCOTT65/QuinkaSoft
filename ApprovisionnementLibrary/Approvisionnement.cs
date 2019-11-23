@@ -47,7 +47,7 @@ namespace ApprovisionnementLibrary
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@id", 5, DbType.Int32, aprov.Id));
-                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@pa", 50, DbType.String, aprov.UserSession));
+                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@usersession", 50, DbType.String, aprov.UserSession));
        
 
                 cmd.ExecuteNonQuery();
