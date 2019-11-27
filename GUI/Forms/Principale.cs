@@ -62,5 +62,17 @@ namespace GUI
             var form = new Frm_Connection();
             form.ShowDialog();
         }
+
+        private void toutesLesVentesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UC_Sortie sorti = new UC_Sortie();
+            ChargerUser(sorti);
+        }
+
+        private void remboursementToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UC_Remboursement sorti = new UC_Remboursement();
+            ChargerUser(sorti);
+        }
     }
 }

@@ -138,6 +138,7 @@
             this.Controls.Add(this.passTxt);
             this.Controls.Add(this.userTxt);
             this.Name = "Frm_Connection";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_Connection";
             this.ResumeLayout(false);
             this.PerformLayout();

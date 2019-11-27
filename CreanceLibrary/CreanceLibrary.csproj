@@ -43,6 +43,7 @@
     <Compile Include="Client.cs" />
     <Compile Include="Creance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Remboursement.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ManageSingleConnexion\ManageSingleConnexion.csproj">

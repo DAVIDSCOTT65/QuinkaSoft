@@ -125,5 +125,36 @@ namespace GUI.Classes
             }
             return identifiant;
         }
+        public void retourInfoCredit(Label champ1, Label champ2, Label champ3, string valeur)
+        {
+            
+
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT_DETAILS_CREANCE";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@valeur", 200, DbType.String, valeur));
+
+                IDataReader rd = cmd.ExecuteReader();
+
+                if (rd.Read())
+                {
+                    
+                    champ1.Text = rd["Noms"].ToString();
+                    champ2.Text = rd["Montant"].ToString();
+                    champ3.Text = rd["Date_Paiement"].ToString();
+                    
+
+                }
+                rd.Close();
+                rd.Dispose();
+                cmd.Dispose();
+            }
+            //return identifiant;
+
+        }
     }
 }

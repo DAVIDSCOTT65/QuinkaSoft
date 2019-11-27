@@ -29,3 +29,9 @@ E:\DAVID\PROJETBDD\QuinkaStock\GUI\bin\Debug\QuinkUtilities.dll
 E:\DAVID\PROJETBDD\QuinkaStock\GUI\bin\Debug\QuinkUtilities.pdb
 E:\DAVID\PROJETBDD\QuinkaStock\GUI\obj\Debug\GUI.Forms.ParametreDB.resources
 E:\DAVID\PROJETBDD\QuinkaStock\GUI\obj\Debug\GUI.Forms.Frm_Connection.resources
+E:\DAVID\PROJETBDD\QuinkaStock\GUI\obj\Debug\GUI.Forms.FrmSortie.resources
+E:\DAVID\PROJETBDD\QuinkaStock\GUI\obj\Debug\GUI.UserControls.UC_Sortie.resources
+E:\DAVID\PROJETBDD\QuinkaStock\GUI\obj\Debug\GUI.Forms.FrmClient.resources
+E:\DAVID\PROJETBDD\QuinkaStock\GUI\obj\Debug\GUI.Forms.FrmCreance.resources
+E:\DAVID\PROJETBDD\QuinkaStock\GUI\obj\Debug\GUI.Forms.FrmRemboursement.resources
+E:\DAVID\PROJETBDD\QuinkaStock\GUI\obj\Debug\GUI.UserControls.UC_Remboursement.resources

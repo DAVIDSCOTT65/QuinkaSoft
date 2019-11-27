@@ -68,6 +68,30 @@
     <Compile Include="Forms\FrmCategorie.Designer.cs">
       <DependentUpon>FrmCategorie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmClient.Designer.cs">
+      <DependentUpon>FrmClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCreance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCreance.Designer.cs">
+      <DependentUpon>FrmCreance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRemboursement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRemboursement.Designer.cs">
+      <DependentUpon>FrmRemboursement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmSortie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSortie.Designer.cs">
+      <DependentUpon>FrmSortie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Frm_Connection.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +118,18 @@
     <Compile Include="UserControls\UC_Approvisionnement.Designer.cs">
       <DependentUpon>UC_Approvisionnement.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UC_Remboursement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Remboursement.Designer.cs">
+      <DependentUpon>UC_Remboursement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_Sortie.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Sortie.Designer.cs">
+      <DependentUpon>UC_Sortie.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\FrmApprovisionnement.resx">
       <DependentUpon>FrmApprovisionnement.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +138,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmCategorie.resx">
       <DependentUpon>FrmCategorie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmClient.resx">
+      <DependentUpon>FrmClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmCreance.resx">
+      <DependentUpon>FrmCreance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRemboursement.resx">
+      <DependentUpon>FrmRemboursement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSortie.resx">
+      <DependentUpon>FrmSortie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Frm_Connection.resx">
       <DependentUpon>Frm_Connection.cs</DependentUpon>
@@ -124,6 +172,12 @@
     </Compile>
     <EmbeddedResource Include="UserControls\UC_Approvisionnement.resx">
       <DependentUpon>UC_Approvisionnement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_Remboursement.resx">
+      <DependentUpon>UC_Remboursement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_Sortie.resx">
+      <DependentUpon>UC_Sortie.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

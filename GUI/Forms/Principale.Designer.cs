@@ -56,6 +56,7 @@
             this.allDépensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newDépenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.remboursementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -225,7 +226,8 @@
             // 
             this.venteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nouvelleVenteToolStripMenuItem,
-            this.toutesLesVentesToolStripMenuItem});
+            this.toutesLesVentesToolStripMenuItem,
+            this.remboursementToolStripMenuItem});
             this.venteToolStripMenuItem.Image = global::GUI.Properties.Resources.Buy_48px;
             this.venteToolStripMenuItem.Name = "venteToolStripMenuItem";
             this.venteToolStripMenuItem.Size = new System.Drawing.Size(86, 25);
@@ -248,6 +250,7 @@
             | System.Windows.Forms.Keys.W)));
             this.toutesLesVentesToolStripMenuItem.Size = new System.Drawing.Size(305, 26);
             this.toutesLesVentesToolStripMenuItem.Text = "Toutes les ventes";
+            this.toutesLesVentesToolStripMenuItem.Click += new System.EventHandler(this.toutesLesVentesToolStripMenuItem_Click);
             // 
             // databaseManagerToolStripMenuItem
             // 
@@ -323,6 +326,13 @@
             this.panel2.TabIndex = 4;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // remboursementToolStripMenuItem
+            // 
+            this.remboursementToolStripMenuItem.Name = "remboursementToolStripMenuItem";
+            this.remboursementToolStripMenuItem.Size = new System.Drawing.Size(305, 26);
+            this.remboursementToolStripMenuItem.Text = "Remboursement";
+            this.remboursementToolStripMenuItem.Click += new System.EventHandler(this.remboursementToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -375,6 +385,7 @@
         private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem allDépensesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newDépenseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem remboursementToolStripMenuItem;
     }
 }
 

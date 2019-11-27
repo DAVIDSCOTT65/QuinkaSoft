@@ -14,7 +14,7 @@ namespace CreanceLibrary
         public int Id { get; set; }
         public double Montant { get; set; }
         public DateTime DatePaiement { get; set; }
-        public int RefDetail { get; set; }
+        public string Code { get; set; }
         public int RefClient { get; set; }
         public string Observation { get; set; }
         public int NewId()
@@ -49,9 +49,9 @@ namespace CreanceLibrary
                 cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@id", 5, DbType.Int32, cr.Id));
                 cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@montant", 10, DbType.Double, cr.Montant));
                 cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@date", 20, DbType.Date, cr.DatePaiement));
-                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@refdetail", 5, DbType.Int32, cr.RefDetail));
-                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@refclient", 5, DbType.Int32, cr.RefClient));
+                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@refcli", 5, DbType.Int32, cr.RefClient));
                 cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@observation", 100, DbType.String, cr.Observation));
+                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@code", 100, DbType.String, cr.Code));
 
                 cmd.ExecuteNonQuery();
 
