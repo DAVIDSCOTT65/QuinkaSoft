@@ -17,6 +17,16 @@ namespace CreanceLibrary
         public DateTime DateRemboursement { get; set; }
         public string Observation { get; set; }
         public int RefCredit { get; set; }
+        //Ajout variables pour la recupération des données
+        int i = 0;
+        public int Num { get; set; }
+        public string CodeCredit { get; set; }
+        public string MontantR { get; set; }
+        public string CodeClient { get; set; }
+        public string Client { get; set; }
+        public string Sexe { get; set; }
+        public string Phone { get; set; }
+        
         public int NewId()
         {
             if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
@@ -55,6 +65,48 @@ namespace CreanceLibrary
 
                 cmd.ExecuteNonQuery();
             }
+        }
+        public List<Remboursement> AllDPayement()
+        {
+            List<Remboursement> lst = new List<Remboursement>();
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT_ALL_REMBOURSEMENT";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                IDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    lst.Add(GetDetails(dr));
+                }
+                dr.Dispose();
+            }
+            return lst;
+        }
+        private Remboursement GetDetails(IDataReader dr)
+        {
+            Remboursement rem = new Remboursement();
+
+            i = i + 1;
+
+            rem.Num = i;
+            rem.Id = Convert.ToInt32(dr["Id"].ToString());
+            rem.Code = dr["Code"].ToString();
+            rem.Montant = Convert.ToDouble(dr["Montant"].ToString());
+            rem.DateRemboursement = Convert.ToDateTime(dr["Date_Remboursement"].ToString());
+            rem.Observation = dr["Observation"].ToString();
+            rem.CodeCredit = dr["Code_Credit"].ToString();
+            rem.MontantR = dr["Montant_Restant"].ToString();
+            rem.CodeClient = dr["Code_Client"].ToString();
+            rem.Client = dr["Client"].ToString();
+            rem.Sexe = dr["Sexe"].ToString();
+            rem.Phone = dr["Telephone"].ToString();
+
+
+            return rem;
         }
     }
 }

@@ -36,23 +36,24 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.dgApprov = new System.Windows.Forms.DataGridView();
+            this.dgSortie = new System.Windows.Forms.DataGridView();
+            this.serchTxt = new System.Windows.Forms.TextBox();
             this.ColNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serchTxt = new System.Windows.Forms.TextBox();
             this.panelGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgApprov)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgSortie)).BeginInit();
             this.SuspendLayout();
             // 
             // panelGrid
@@ -64,7 +65,7 @@
             this.panelGrid.Controls.Add(this.label1);
             this.panelGrid.Controls.Add(this.button1);
             this.panelGrid.Controls.Add(this.pictureBox4);
-            this.panelGrid.Controls.Add(this.dgApprov);
+            this.panelGrid.Controls.Add(this.dgSortie);
             this.panelGrid.Controls.Add(this.serchTxt);
             this.panelGrid.Location = new System.Drawing.Point(3, 8);
             this.panelGrid.Name = "panelGrid";
@@ -107,16 +108,16 @@
             this.pictureBox4.TabIndex = 76;
             this.pictureBox4.TabStop = false;
             // 
-            // dgApprov
+            // dgSortie
             // 
-            this.dgApprov.AllowUserToAddRows = false;
-            this.dgApprov.AllowUserToDeleteRows = false;
-            this.dgApprov.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgSortie.AllowUserToAddRows = false;
+            this.dgSortie.AllowUserToDeleteRows = false;
+            this.dgSortie.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgApprov.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgApprov.BackgroundColor = System.Drawing.Color.White;
-            this.dgApprov.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgSortie.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgSortie.BackgroundColor = System.Drawing.Color.White;
+            this.dgSortie.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -124,19 +125,20 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgApprov.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgApprov.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgApprov.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgSortie.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgSortie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgSortie.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColNum,
             this.Column1,
             this.Column2,
+            this.Column12,
+            this.Column10,
             this.Column3,
             this.Column5,
             this.Column6,
             this.Column4,
             this.Column8,
             this.Column9,
-            this.Column10,
             this.Column7,
             this.Column11});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -146,10 +148,10 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgApprov.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgApprov.Location = new System.Drawing.Point(3, 46);
-            this.dgApprov.Name = "dgApprov";
-            this.dgApprov.ReadOnly = true;
+            this.dgSortie.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgSortie.Location = new System.Drawing.Point(3, 46);
+            this.dgSortie.Name = "dgSortie";
+            this.dgSortie.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.GrayText;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -157,11 +159,18 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgApprov.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgApprov.RowHeadersVisible = false;
-            this.dgApprov.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgApprov.Size = new System.Drawing.Size(1328, 618);
-            this.dgApprov.TabIndex = 59;
+            this.dgSortie.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgSortie.RowHeadersVisible = false;
+            this.dgSortie.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgSortie.Size = new System.Drawing.Size(1328, 618);
+            this.dgSortie.TabIndex = 59;
+            // 
+            // serchTxt
+            // 
+            this.serchTxt.Location = new System.Drawing.Point(404, 13);
+            this.serchTxt.Name = "serchTxt";
+            this.serchTxt.Size = new System.Drawing.Size(856, 27);
+            this.serchTxt.TabIndex = 70;
             // 
             // ColNum
             // 
@@ -181,10 +190,25 @@
             // 
             // Column2
             // 
-            this.Column2.DataPropertyName = "Articles";
+            this.Column2.DataPropertyName = "Designation";
             this.Column2.HeaderText = "Articles";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
+            // 
+            // Column12
+            // 
+            this.Column12.DataPropertyName = "CodeCteg";
+            this.Column12.HeaderText = "Code Categ.";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "RefEntete";
+            this.Column10.HeaderText = "Entete";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            this.Column10.Visible = false;
             // 
             // Column3
             // 
@@ -195,7 +219,7 @@
             // 
             // Column5
             // 
-            this.Column5.DataPropertyName = "QuantiteA";
+            this.Column5.DataPropertyName = "QuantiteS";
             this.Column5.HeaderText = "Quantité";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
@@ -203,7 +227,7 @@
             // Column6
             // 
             this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column6.DataPropertyName = "PAu";
+            this.Column6.DataPropertyName = "PVu";
             this.Column6.HeaderText = "PVU";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
@@ -233,18 +257,10 @@
             this.Column9.ReadOnly = true;
             this.Column9.Visible = false;
             // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "RefApprov";
-            this.Column10.HeaderText = "RefApprov";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Visible = false;
-            // 
             // Column7
             // 
             this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column7.DataPropertyName = "PAT";
+            this.Column7.DataPropertyName = "PVt";
             this.Column7.HeaderText = "PVT";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
@@ -252,17 +268,10 @@
             // 
             // Column11
             // 
-            this.Column11.DataPropertyName = "DateApprov";
+            this.Column11.DataPropertyName = "DateSortie";
             this.Column11.HeaderText = "Date de sortie";
             this.Column11.Name = "Column11";
             this.Column11.ReadOnly = true;
-            // 
-            // serchTxt
-            // 
-            this.serchTxt.Location = new System.Drawing.Point(404, 13);
-            this.serchTxt.Name = "serchTxt";
-            this.serchTxt.Size = new System.Drawing.Size(856, 27);
-            this.serchTxt.TabIndex = 70;
             // 
             // UC_Sortie
             // 
@@ -274,10 +283,11 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "UC_Sortie";
             this.Size = new System.Drawing.Size(1342, 700);
+            this.Load += new System.EventHandler(this.UC_Sortie_Load);
             this.panelGrid.ResumeLayout(false);
             this.panelGrid.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgApprov)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgSortie)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -288,19 +298,20 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox4;
-        public System.Windows.Forms.DataGridView dgApprov;
+        public System.Windows.Forms.DataGridView dgSortie;
+        private System.Windows.Forms.TextBox serchTxt;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.TextBox serchTxt;
     }
 }

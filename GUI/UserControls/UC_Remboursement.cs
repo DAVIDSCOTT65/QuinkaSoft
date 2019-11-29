@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GUI.Forms;
+using CreanceLibrary;
 
 namespace GUI.UserControls
 {
@@ -23,6 +24,15 @@ namespace GUI.UserControls
             FrmRemboursement frm = new FrmRemboursement();
 
             frm.ShowDialog();
+        }
+
+        private void UC_Remboursement_Load(object sender, EventArgs e)
+        {
+            SelectDatas(new Remboursement());
+        }
+        void SelectDatas(Remboursement rem)
+        {
+            dgRembb.DataSource = rem.AllDPayement();
         }
     }
 }

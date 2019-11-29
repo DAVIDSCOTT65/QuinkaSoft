@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GUI.Forms;
+using SortieLibrary;
 
 namespace GUI.UserControls
 {
@@ -22,6 +23,15 @@ namespace GUI.UserControls
         {
             FrmSortie frm = new FrmSortie();
             frm.ShowDialog();
+        }
+
+        private void UC_Sortie_Load(object sender, EventArgs e)
+        {
+            SelectDatas(new Detail_Sortie());
+        }
+        void SelectDatas(Detail_Sortie ds)
+        {
+            dgSortie.DataSource = ds.AllSortie();
         }
     }
 }

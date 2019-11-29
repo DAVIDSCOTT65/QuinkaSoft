@@ -16,6 +16,16 @@ namespace SortieLibrary
         public double PVu { get; set; }
         public int RefArticle { get; set; }
         public int RefEntete { get; set; }
+        //Declaration des variables de recuperation de données
+        int i = 0;
+        public int Num { get; set; }
+        public string Code { get; set; }
+        public string Designation { get; set; }
+        public string CodeCteg { get; set; }
+        public string Categorie { get; set; }
+        public string QuantiteS { get; set; }
+        public string PVt { get; set; }
+        public DateTime DateSortie { get; set; }
         public int NewId()
         {
             if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
@@ -63,7 +73,7 @@ namespace SortieLibrary
                 ImplementeConnexion.Instance.Conn.Open();
             using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
             {
-                cmd.CommandText = "";
+                cmd.CommandText = "SELECT_ALL_SORTIE";
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 IDataReader dr = cmd.ExecuteReader();
@@ -79,6 +89,19 @@ namespace SortieLibrary
         private Detail_Sortie GetDetails(IDataReader dr)
         {
             Detail_Sortie ds = new Detail_Sortie();
+
+            i = i + 1;
+
+            ds.Num = i;
+            ds.Id = Convert.ToInt32(dr["Id"].ToString());
+            ds.Code = dr["Code"].ToString();
+            ds.Designation = dr["Designation"].ToString();
+            ds.CodeCteg = dr["Code_Categ"].ToString();
+            ds.Categorie = dr["Categorie"].ToString();
+            ds.QuantiteS = dr["Quantite"].ToString();
+            ds.PVu = Convert.ToDouble(dr["PVu"].ToString());
+            ds.PVt = dr["PVt"].ToString();
+            ds.DateSortie = Convert.ToDateTime(dr["Date_Sortie"].ToString());
 
 
 
