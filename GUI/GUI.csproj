@@ -33,8 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 14.0\Visual Studio Tools for Office\PIA\Office15\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,7 +56,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\ClsMonitoring.cs" />
+    <Compile Include="Classes\DGVPrinter.cs" />
     <Compile Include="Classes\DynamicClasses.cs" />
+    <Compile Include="Classes\HistoriqueES.cs" />
+    <Compile Include="Classes\My_DataTable_Extensions.cs" />
     <Compile Include="Classes\Pubcon.cs" />
     <Compile Include="Classes\UserSession.cs" />
     <Compile Include="Forms\FrmApprovisionnement.cs">
@@ -110,6 +122,12 @@
     <Compile Include="Forms\Principale.Designer.cs">
       <DependentUpon>Principale.cs</DependentUpon>
     </Compile>
+    <Compile Include="Imprimer\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserControls\UC_Approvisionnement.cs">
@@ -117,6 +135,24 @@
     </Compile>
     <Compile Include="UserControls\UC_Approvisionnement.Designer.cs">
       <DependentUpon>UC_Approvisionnement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_Articles.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Articles.Designer.cs">
+      <DependentUpon>UC_Articles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_DashBord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_DashBord.Designer.cs">
+      <DependentUpon>UC_DashBord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UC_Historique.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Historique.Designer.cs">
+      <DependentUpon>UC_Historique.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UC_Remboursement.cs">
       <SubType>UserControl</SubType>
@@ -160,6 +196,10 @@
     <EmbeddedResource Include="Forms\Principale.resx">
       <DependentUpon>Principale.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Imprimer\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -172,6 +212,15 @@
     </Compile>
     <EmbeddedResource Include="UserControls\UC_Approvisionnement.resx">
       <DependentUpon>UC_Approvisionnement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_Articles.resx">
+      <DependentUpon>UC_Articles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_DashBord.resx">
+      <DependentUpon>UC_DashBord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_Historique.resx">
+      <DependentUpon>UC_Historique.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_Remboursement.resx">
       <DependentUpon>UC_Remboursement.cs</DependentUpon>
@@ -288,6 +337,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Refresh_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Box_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Price Tag_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_PDF_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Microsoft_Excel_25px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

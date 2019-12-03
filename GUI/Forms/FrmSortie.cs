@@ -35,7 +35,7 @@ namespace GUI.Forms
 
         private void FrmSortie_Load(object sender, EventArgs e)
         {
-            dn.chargeNomsCombo(articleCombo, "Designation", "SELECT_ARTICLE");
+            dn.chargeNomsCombo(articleCombo, "Designation", "SELECT_ARTICLE_0");
         }
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -58,16 +58,28 @@ namespace GUI.Forms
 
                     if (rowCount == 0)
                     {
-                        idDetail = det.NewId();
-                        dgManyCotisation.Rows.Add(idDetail, articleCombo.Text, quantiteTxt.Text, pauTxt.Text, dn.retourId("Id", "Articles", "Designation", articleCombo.Text), Convert.ToDouble(quantiteTxt.Text) * Convert.ToDouble(pauTxt.Text));
+                        if (stockTxt.ForeColor == Color.Red)
+                            MessageBox.Show("La quantité à sortir est trop grand ou trop petit par rapport à la quantité en stock");
+                        else
+                        {
+                            idDetail = det.NewId();
+                            dgManyCotisation.Rows.Add(idDetail, articleCombo.Text, quantiteTxt.Text, pauTxt.Text, dn.retourId("Id", "Articles", "Designation", articleCombo.Text), Convert.ToDouble(quantiteTxt.Text) * Convert.ToDouble(pauTxt.Text));
 
-                        lblTotal.Text = (Convert.ToDouble(quantiteTxt.Text) * Convert.ToDouble(pauTxt.Text)).ToString();
+                            lblTotal.Text = (Convert.ToDouble(quantiteTxt.Text) * Convert.ToDouble(pauTxt.Text)).ToString();
+                        }
+                        
                     }
                     else if (rowCount > 0)
                     {
-                        idDetail = idDetail + 1;
-                        dgManyCotisation.Rows.Add(idDetail, articleCombo.Text, quantiteTxt.Text, pauTxt.Text, dn.retourId("Id", "Articles", "Designation", articleCombo.Text), Convert.ToDouble(quantiteTxt.Text) * Convert.ToDouble(pauTxt.Text));
-                        lblTotal.Text = (Convert.ToDouble(lblTotal.Text) + Convert.ToDouble(quantiteTxt.Text) * Convert.ToDouble(pauTxt.Text)).ToString();
+                        if (stockTxt.ForeColor == Color.Red)
+                            MessageBox.Show("La quantité à sortir est trop grand ou trop petit par rapport à la quantité en stock");
+                        else
+                        {
+                            idDetail = idDetail + 1;
+                            dgManyCotisation.Rows.Add(idDetail, articleCombo.Text, quantiteTxt.Text, pauTxt.Text, dn.retourId("Id", "Articles", "Designation", articleCombo.Text), Convert.ToDouble(quantiteTxt.Text) * Convert.ToDouble(pauTxt.Text));
+                            lblTotal.Text = (Convert.ToDouble(lblTotal.Text) + Convert.ToDouble(quantiteTxt.Text) * Convert.ToDouble(pauTxt.Text)).ToString();
+                        }
+                        
                     }
                 }
             }
@@ -134,13 +146,14 @@ namespace GUI.Forms
 
                         det.Enreistrer(det);
 
-                        MessageBox.Show("Enregistrements reussies");
-
-                        idDetail = 0;
-                        idEntete = 0;
-                        dgManyCotisation.Rows.Clear();
-                        lblTotal.Text = "0,00";
+                       
                     }
+                    MessageBox.Show("Enregistrements reussies");
+
+                    idDetail = 0;
+                    idEntete = 0;
+                    dgManyCotisation.Rows.Clear();
+                    lblTotal.Text = "0,00";
                 }
                    
 
@@ -151,6 +164,28 @@ namespace GUI.Forms
             {
 
                 MessageBox.Show("L'erreur suivant est survenue : " + ex.Message);
+            }
+        }
+
+        private void articleCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            pauTxt.Text = dn.RetourPrixArticle(articleCombo.Text).ToString();
+            uniteLbl.Text = dn.RetourUniteArticle(articleCombo.Text,stockTxt);
+        }
+
+        private void quantiteTxt_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Convert.ToDouble(quantiteTxt.Text) > Convert.ToDouble(stockTxt.Text) || Convert.ToDouble(quantiteTxt.Text) <= 0)
+                    stockTxt.ForeColor = Color.Red;
+                else
+                    stockTxt.ForeColor = Color.Black;
+            }
+            catch (Exception ex)
+            {
+
+                
             }
         }
     }

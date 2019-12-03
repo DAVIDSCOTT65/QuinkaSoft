@@ -55,7 +55,7 @@ namespace GUI.Forms
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            if (idArticle == 0 || codeTxt.Text == "" || designationTxt.Text == "" || pvuTxt.Text == "0.00" || uniteTxt.Text == "" || categCombo.Text == "")
+            if (idArticle == 0 || codeTxt.Text == "" || designationTxt.Text == "" || pvuTxt.Text == "0.00" || categCombo.Text == "")
                 MessageBox.Show("Completer tous les champs svp !!!");
             else
                 SaveData();

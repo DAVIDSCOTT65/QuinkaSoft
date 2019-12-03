@@ -61,6 +61,7 @@ namespace GUI
             PubCon.testFile();
             var form = new Frm_Connection();
             form.ShowDialog();
+            ChargerUser(new UC_DashBord());
         }
 
         private void toutesLesVentesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -72,6 +73,28 @@ namespace GUI
         private void remboursementToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UC_Remboursement sorti = new UC_Remboursement();
+            ChargerUser(sorti);
+        }
+
+        private void stockToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void historiquesESToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UC_Historique sorti = new UC_Historique();
+            ChargerUser(sorti);
+        }
+
+        private void stockToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void articlesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            UC_Articles sorti = new UC_Articles();
             ChargerUser(sorti);
         }
     }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.articleCombo = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button8 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.uniteLbl = new System.Windows.Forms.Label();
             this.pauTxt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.quantiteTxt = new System.Windows.Forms.TextBox();
@@ -60,6 +60,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
+            this.stockTxt = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgManyCotisation)).BeginInit();
@@ -67,13 +68,14 @@
             // 
             // articleCombo
             // 
-            this.articleCombo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.articleCombo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.articleCombo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.articleCombo.FormattingEnabled = true;
-            this.articleCombo.Location = new System.Drawing.Point(109, 104);
+            this.articleCombo.Location = new System.Drawing.Point(94, 104);
             this.articleCombo.Name = "articleCombo";
             this.articleCombo.Size = new System.Drawing.Size(385, 29);
             this.articleCombo.TabIndex = 167;
+            this.articleCombo.SelectedIndexChanged += new System.EventHandler(this.articleCombo_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -150,7 +152,7 @@
             this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addBtn.ForeColor = System.Drawing.Color.White;
-            this.addBtn.Location = new System.Drawing.Point(200, 207);
+            this.addBtn.Location = new System.Drawing.Point(185, 207);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(170, 35);
             this.addBtn.TabIndex = 162;
@@ -167,14 +169,14 @@
             this.dgManyCotisation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgManyCotisation.BackgroundColor = System.Drawing.Color.White;
             this.dgManyCotisation.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgManyCotisation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgManyCotisation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgManyCotisation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgManyCotisation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -183,24 +185,24 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgManyCotisation.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgManyCotisation.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgManyCotisation.Location = new System.Drawing.Point(6, 252);
             this.dgManyCotisation.Name = "dgManyCotisation";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.GrayText;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgManyCotisation.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.GrayText;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgManyCotisation.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgManyCotisation.RowHeadersVisible = false;
             this.dgManyCotisation.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgManyCotisation.Size = new System.Drawing.Size(597, 195);
@@ -268,24 +270,25 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(495, 177);
+            this.label6.Location = new System.Drawing.Point(480, 177);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 21);
             this.label6.TabIndex = 159;
             this.label6.Text = "CDF";
             // 
-            // label5
+            // uniteLbl
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(495, 144);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 21);
-            this.label5.TabIndex = 158;
-            this.label5.Text = "Unité";
+            this.uniteLbl.AutoSize = true;
+            this.uniteLbl.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.uniteLbl.Location = new System.Drawing.Point(519, 148);
+            this.uniteLbl.Name = "uniteLbl";
+            this.uniteLbl.Size = new System.Drawing.Size(40, 17);
+            this.uniteLbl.TabIndex = 158;
+            this.uniteLbl.Text = "Unité";
             // 
             // pauTxt
             // 
-            this.pauTxt.Location = new System.Drawing.Point(109, 174);
+            this.pauTxt.Location = new System.Drawing.Point(94, 174);
             this.pauTxt.Name = "pauTxt";
             this.pauTxt.Size = new System.Drawing.Size(385, 27);
             this.pauTxt.TabIndex = 156;
@@ -293,7 +296,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(61, 177);
+            this.label4.Location = new System.Drawing.Point(46, 177);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 21);
             this.label4.TabIndex = 155;
@@ -301,15 +304,16 @@
             // 
             // quantiteTxt
             // 
-            this.quantiteTxt.Location = new System.Drawing.Point(109, 141);
+            this.quantiteTxt.Location = new System.Drawing.Point(94, 141);
             this.quantiteTxt.Name = "quantiteTxt";
             this.quantiteTxt.Size = new System.Drawing.Size(385, 27);
             this.quantiteTxt.TabIndex = 154;
+            this.quantiteTxt.TextChanged += new System.EventHandler(this.quantiteTxt_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 144);
+            this.label3.Location = new System.Drawing.Point(6, 144);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 21);
             this.label3.TabIndex = 153;
@@ -318,7 +322,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 111);
+            this.label2.Location = new System.Drawing.Point(27, 111);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 21);
             this.label2.TabIndex = 152;
@@ -393,12 +397,23 @@
             this.label9.TabIndex = 170;
             this.label9.Text = "Le client n\'a pas payer toute la somme ? Cliquez sur";
             // 
+            // stockTxt
+            // 
+            this.stockTxt.AutoSize = true;
+            this.stockTxt.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stockTxt.Location = new System.Drawing.Point(482, 148);
+            this.stockTxt.Name = "stockTxt";
+            this.stockTxt.Size = new System.Drawing.Size(33, 17);
+            this.stockTxt.TabIndex = 173;
+            this.stockTxt.Text = "0,00";
+            // 
             // FrmSortie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(606, 550);
+            this.Controls.Add(this.stockTxt);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.label9);
@@ -413,7 +428,7 @@
             this.Controls.Add(this.dgManyCotisation);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.uniteLbl);
             this.Controls.Add(this.pauTxt);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.quantiteTxt);
@@ -449,7 +464,7 @@
         private System.Windows.Forms.DataGridView dgManyCotisation;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label uniteLbl;
         private System.Windows.Forms.TextBox pauTxt;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox quantiteTxt;
@@ -466,5 +481,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label stockTxt;
     }
 }

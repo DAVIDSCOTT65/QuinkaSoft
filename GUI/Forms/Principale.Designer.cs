@@ -40,12 +40,14 @@
             this.approvisionnementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.articlesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.catégorieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.categoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stockToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.venteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nouvelleVenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toutesLesVentesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.remboursementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stockToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.articlesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.catégoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historiquesESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.databaseManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.restaurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,7 +58,6 @@
             this.allDépensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newDépenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.remboursementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -99,12 +100,13 @@
             this.fileToolStripMenuItem,
             this.approvisionnementToolStripMenuItem,
             this.venteToolStripMenuItem,
+            this.stockToolStripMenuItem2,
             this.databaseManagerToolStripMenuItem,
             this.userToolStripMenuItem,
             this.dépensesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(9, 9);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(821, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(810, 29);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -167,10 +169,7 @@
             // 
             this.approvisionnementToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.articlesToolStripMenuItem,
-            this.catégorieToolStripMenuItem,
-            this.stockToolStripMenuItem,
-            this.categoriesToolStripMenuItem,
-            this.stockToolStripMenuItem1});
+            this.catégorieToolStripMenuItem});
             this.approvisionnementToolStripMenuItem.Image = global::GUI.Properties.Resources.Shopping_Cart_Loaded_48px;
             this.approvisionnementToolStripMenuItem.Name = "approvisionnementToolStripMenuItem";
             this.approvisionnementToolStripMenuItem.Size = new System.Drawing.Size(192, 25);
@@ -195,32 +194,6 @@
             this.catégorieToolStripMenuItem.Size = new System.Drawing.Size(375, 26);
             this.catégorieToolStripMenuItem.Text = "All Approvisionnement";
             this.catégorieToolStripMenuItem.Click += new System.EventHandler(this.catégorieToolStripMenuItem_Click);
-            // 
-            // stockToolStripMenuItem
-            // 
-            this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
-            this.stockToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
-            | System.Windows.Forms.Keys.Q)));
-            this.stockToolStripMenuItem.Size = new System.Drawing.Size(375, 26);
-            this.stockToolStripMenuItem.Text = "Articles";
-            // 
-            // categoriesToolStripMenuItem
-            // 
-            this.categoriesToolStripMenuItem.Image = global::GUI.Properties.Resources.Categorize_48px;
-            this.categoriesToolStripMenuItem.Name = "categoriesToolStripMenuItem";
-            this.categoriesToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
-            | System.Windows.Forms.Keys.K)));
-            this.categoriesToolStripMenuItem.Size = new System.Drawing.Size(375, 26);
-            this.categoriesToolStripMenuItem.Text = "Categories";
-            // 
-            // stockToolStripMenuItem1
-            // 
-            this.stockToolStripMenuItem1.Image = global::GUI.Properties.Resources.Sell_Stock_48px;
-            this.stockToolStripMenuItem1.Name = "stockToolStripMenuItem1";
-            this.stockToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
-            | System.Windows.Forms.Keys.S)));
-            this.stockToolStripMenuItem1.Size = new System.Drawing.Size(375, 26);
-            this.stockToolStripMenuItem1.Text = "Stock";
             // 
             // venteToolStripMenuItem
             // 
@@ -251,6 +224,48 @@
             this.toutesLesVentesToolStripMenuItem.Size = new System.Drawing.Size(305, 26);
             this.toutesLesVentesToolStripMenuItem.Text = "Toutes les ventes";
             this.toutesLesVentesToolStripMenuItem.Click += new System.EventHandler(this.toutesLesVentesToolStripMenuItem_Click);
+            // 
+            // remboursementToolStripMenuItem
+            // 
+            this.remboursementToolStripMenuItem.Name = "remboursementToolStripMenuItem";
+            this.remboursementToolStripMenuItem.Size = new System.Drawing.Size(305, 26);
+            this.remboursementToolStripMenuItem.Text = "Remboursement";
+            this.remboursementToolStripMenuItem.Click += new System.EventHandler(this.remboursementToolStripMenuItem_Click);
+            // 
+            // stockToolStripMenuItem2
+            // 
+            this.stockToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.articlesToolStripMenuItem1,
+            this.catégoriesToolStripMenuItem,
+            this.historiquesESToolStripMenuItem});
+            this.stockToolStripMenuItem2.Image = global::GUI.Properties.Resources.Box_48px;
+            this.stockToolStripMenuItem2.Name = "stockToolStripMenuItem2";
+            this.stockToolStripMenuItem2.Size = new System.Drawing.Size(81, 25);
+            this.stockToolStripMenuItem2.Text = "Stock";
+            this.stockToolStripMenuItem2.Click += new System.EventHandler(this.stockToolStripMenuItem2_Click);
+            // 
+            // articlesToolStripMenuItem1
+            // 
+            this.articlesToolStripMenuItem1.Image = global::GUI.Properties.Resources.Price_Tag_48px;
+            this.articlesToolStripMenuItem1.Name = "articlesToolStripMenuItem1";
+            this.articlesToolStripMenuItem1.Size = new System.Drawing.Size(183, 26);
+            this.articlesToolStripMenuItem1.Text = "Articles";
+            this.articlesToolStripMenuItem1.Click += new System.EventHandler(this.articlesToolStripMenuItem1_Click);
+            // 
+            // catégoriesToolStripMenuItem
+            // 
+            this.catégoriesToolStripMenuItem.Image = global::GUI.Properties.Resources.Categorize_48px;
+            this.catégoriesToolStripMenuItem.Name = "catégoriesToolStripMenuItem";
+            this.catégoriesToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
+            this.catégoriesToolStripMenuItem.Text = "Catégories";
+            // 
+            // historiquesESToolStripMenuItem
+            // 
+            this.historiquesESToolStripMenuItem.Image = global::GUI.Properties.Resources.Sell_Stock_48px;
+            this.historiquesESToolStripMenuItem.Name = "historiquesESToolStripMenuItem";
+            this.historiquesESToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
+            this.historiquesESToolStripMenuItem.Text = "Historiques ES";
+            this.historiquesESToolStripMenuItem.Click += new System.EventHandler(this.historiquesESToolStripMenuItem_Click);
             // 
             // databaseManagerToolStripMenuItem
             // 
@@ -322,16 +337,9 @@
             // 
             this.panel2.Location = new System.Drawing.Point(0, 49);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1342, 700);
+            this.panel2.Size = new System.Drawing.Size(1370, 700);
             this.panel2.TabIndex = 4;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // remboursementToolStripMenuItem
-            // 
-            this.remboursementToolStripMenuItem.Name = "remboursementToolStripMenuItem";
-            this.remboursementToolStripMenuItem.Size = new System.Drawing.Size(305, 26);
-            this.remboursementToolStripMenuItem.Text = "Remboursement";
-            this.remboursementToolStripMenuItem.Click += new System.EventHandler(this.remboursementToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -366,10 +374,6 @@
         private System.Windows.Forms.ToolStripMenuItem aProposToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fermerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deconnexionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem approvisionnementToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem articlesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem catégorieToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem venteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nouvelleVenteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toutesLesVentesToolStripMenuItem;
@@ -381,11 +385,16 @@
         private System.Windows.Forms.ToolStripMenuItem monitoringToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dépensesToolStripMenuItem;
         public System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ToolStripMenuItem categoriesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem allDépensesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newDépenseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem remboursementToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem approvisionnementToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem articlesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem catégorieToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem articlesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem catégoriesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historiquesESToolStripMenuItem;
     }
 }
 

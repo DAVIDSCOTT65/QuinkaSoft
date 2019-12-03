@@ -11,6 +11,8 @@ namespace ArticlesLibrary
 {
     public class Articles
     {
+        int i = 0;
+        public int Num { get; set; }
         public int Id { get; set; }
         public string Designation { get; set; }
         public double Quantite { get; set; }
@@ -19,6 +21,10 @@ namespace ArticlesLibrary
         public int RefCategorie { get; set; }
         public string Code { get; set; }
         public string Categorie { get; set; }
+        public string CodeCateg { get; set; }
+        public string QuantiteS { get; set; }
+        public string PVt { get; set; }
+        public DateTime DateAjout { get; set; }
         public int NewId()
         {
             if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
@@ -84,13 +90,18 @@ namespace ArticlesLibrary
         {
             Articles art = new Articles();
 
+            i = i + 1;
+            art.Num = i;
             art.Id = Convert.ToInt32(dr["Id"].ToString());
             art.Code = dr["Code"].ToString();
-            art.Designation = dr["Designation"].ToString();
-            art.Quantite = Convert.ToDouble(dr["Quantite"].ToString());
-            art.PVu = Convert.ToDouble(dr["PVu"].ToString());
-            art.Unite = dr["Unite"].ToString();
+            art.Designation = dr["Articles"].ToString();
+            art.CodeCateg = dr["CodeCateg"].ToString();
             art.Categorie = dr["Categorie"].ToString();
+            art.QuantiteS = dr["Quantite"].ToString();
+            art.PVu = Convert.ToDouble(dr["PVu"].ToString());
+            art.PVt = dr["PVT"].ToString();
+            art.DateAjout = Convert.ToDateTime(dr["DateAjout"].ToString());
+           
 
             return art;
         }

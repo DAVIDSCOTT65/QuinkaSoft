@@ -156,5 +156,73 @@ namespace GUI.Classes
             //return identifiant;
 
         }
+        public double RetourPrixArticle(string valeur)
+        {
+            double pv = 0;
+
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT_PVU";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@valeur", 200, DbType.String, valeur));
+
+                IDataReader rd = cmd.ExecuteReader();
+
+                if (rd.Read())
+                {
+
+                    pv = Convert.ToDouble(rd["PVu"].ToString());
+                    
+
+
+                }
+                rd.Close();
+                rd.Dispose();
+                cmd.Dispose();
+            }
+            return pv;
+
+        }
+        public string RetourUniteArticle(string valeur, Label quantite)
+        {
+            string unite = "";
+
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT_UNITE";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@valeur", 200, DbType.String, valeur));
+
+                IDataReader rd = cmd.ExecuteReader();
+
+                if (rd.Read())
+                {
+                    if (rd["Unite"] == DBNull.Value || rd["Quantite"]==DBNull.Value)
+                    {
+                        unite = "Pas d'unité";
+                        quantite.Text = "0";
+                    }
+                        
+                    else
+                    {
+                        unite = rd["Unite"].ToString();
+                        quantite.Text = rd["Quantite"].ToString();
+                    }
+                        
+
+                }
+                rd.Close();
+                rd.Dispose();
+                cmd.Dispose();
+            }
+            return unite;
+
+        }
     }
 }

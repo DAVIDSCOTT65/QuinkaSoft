@@ -57,8 +57,8 @@ namespace GUI.Forms
                 int rowCount;
                 if (idDetail==0)
                     MessageBox.Show("Cliquez d'abord sur le boutton sur le +", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                else if(articleCombo.Text=="" || quantiteTxt.Text=="" || pauTxt.Text=="")
-                    MessageBox.Show("Completez tous les champs svp !!!", "Champs Obligatiore", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                else if(articleCombo.Text=="" || quantiteTxt.Text=="" || pauTxt.Text=="" || Convert.ToDouble(quantiteTxt.Text)<=0)
+                    MessageBox.Show("Completez tous les champs en évitant le valeur absorbant et négatif", "Champs Obligatiore", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
                 else
                 {
                     rowCount = dgManyCotisation.Rows.Count;
@@ -66,12 +66,12 @@ namespace GUI.Forms
                     if (rowCount==0)
                     {
                         idDetail = det.NewId();
-                        dgManyCotisation.Rows.Add(idDetail, articleCombo.Text, quantiteTxt.Text, pauTxt.Text, dn.retourId("Id","Articles","Designation",articleCombo.Text));
+                        dgManyCotisation.Rows.Add(idDetail, articleCombo.Text, quantiteTxt.Text, pauTxt.Text, dn.retourId("Id","Articles","Designation",articleCombo.Text),Convert.ToDouble(quantiteTxt.Text) * Convert.ToDouble(pauTxt.Text));
                     }
                     else if(rowCount > 0)
                     {
                         idDetail = idDetail + 1;
-                        dgManyCotisation.Rows.Add(idDetail, articleCombo.Text, quantiteTxt.Text, pauTxt.Text, dn.retourId("Id", "Articles", "Designation", articleCombo.Text));
+                        dgManyCotisation.Rows.Add(idDetail, articleCombo.Text, quantiteTxt.Text, pauTxt.Text, dn.retourId("Id", "Articles", "Designation", articleCombo.Text), Convert.ToDouble(quantiteTxt.Text) * Convert.ToDouble(pauTxt.Text));
                     }
                 }
             }
@@ -140,6 +140,11 @@ namespace GUI.Forms
 
                 MessageBox.Show("L'erreur suivant est survenue : " + ex.Message);
             }
+        }
+
+        private void articleCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            uniteLbl.Text = dn.RetourUniteArticle(articleCombo.Text,stockTxt);
         }
     }
 }
