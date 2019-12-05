@@ -1,4 +1,6 @@
-﻿using ManageSingleConnexion;
+﻿using GUI.Forms;
+using GUI.Imprimer;
+using ManageSingleConnexion;
 using ParametreConnection;
 using System;
 using System.Collections.Generic;
@@ -223,6 +225,86 @@ namespace GUI.Classes
             }
             return unite;
 
+        }
+        public void Sortie_Entree_Sortie()
+        {
+            try
+            {
+                FrmImpression frm = new FrmImpression();
+
+
+                if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                    ImplementeConnexion.Instance.Conn.Open();
+                using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+                {
+                    cmd.CommandText = "SELECT_ES";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter dscmd = new SqlDataAdapter((SqlCommand)cmd);
+                    dscmd.Fill(ds, "Affichage_Details_ES");
+
+                    CR_Entree_Sortie entree = new CR_Entree_Sortie();
+                    entree.SetDataSource(ds);
+
+                    frm.crystalReportViewer1.ReportSource = entree;
+                    frm.crystalReportViewer1.Refresh();
+
+
+                    frm.Visible = true;
+
+                }
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("L'erreur suivant est survenue : " + ex.Message);
+            }
+        }
+        public void Sortie_Fiche_Stock_Article(string code)
+        {
+            try
+            {
+                FrmImpression frm = new FrmImpression();
+
+
+                if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                    ImplementeConnexion.Instance.Conn.Open();
+                using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+                {
+                    cmd.CommandText = "SELECT_FICHE_STOCK_ARTICLE";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@code", 30, DbType.String, code));
+
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter dscmd = new SqlDataAdapter((SqlCommand)cmd);
+                    dscmd.Fill(ds, "Affichage_Details_Historique");
+
+                    CR_Fiche_De_Stock entree = new CR_Fiche_De_Stock();
+                    entree.SetDataSource(ds);
+
+                    frm.crystalReportViewer1.ReportSource = entree;
+                    frm.crystalReportViewer1.Refresh();
+
+
+                    frm.Visible = true;
+
+                }
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("L'erreur suivant est survenue : " + ex.Message);
+            }
         }
     }
 }

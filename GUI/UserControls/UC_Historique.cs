@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GUI.Classes;
 using System.Threading;
+using System.Drawing.Printing;
 
 namespace GUI.UserControls
 {
@@ -38,6 +39,7 @@ namespace GUI.UserControls
             try
             {
                 DGVPrinter printer = new DGVPrinter();
+                
                 printer.Title = "Historique Entrées et sorties";
                 printer.SubTitle = string.Format("Date :{0}", DateTime.Now.Date.ToString("MM/dd/yyyy"));
                 printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
@@ -47,6 +49,9 @@ namespace GUI.UserControls
                 printer.HeaderCellAlignment = StringAlignment.Near;
                 printer.Footer = "Go down";
                 printer.FooterSpacing = 15;
+
+                printer.PageSize = new PaperSize("Custom", 5100, 6600);
+                
                 printer.PrintDataGridView(dgHistorique);
 
             }
@@ -63,10 +68,10 @@ namespace GUI.UserControls
         private DataParameter _inputparameter;
         private void button3_Click(object sender, EventArgs e)
         {
-            ExportExcel();
-            //_inputparameter.delay = 10;
-            //_inputparameter.progress = 1200;
-            //backgroundWorker1.RunWorkerAsync(_inputparameter);
+            //ExportExcel();
+            _inputparameter.delay = 10;
+            _inputparameter.progress = 1200;
+            backgroundWorker1.RunWorkerAsync(_inputparameter);
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
@@ -131,6 +136,11 @@ namespace GUI.UserControls
                 Thread.Sleep(100);
                 labStatus.Text = "Your data has been successfully exported";
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DynamicClasses.GetInstance().Sortie_Entree_Sortie();
         }
     }
 }

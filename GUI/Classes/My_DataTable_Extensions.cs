@@ -51,7 +51,7 @@ namespace GUI.Classes
             }
             catch (Exception ex)
             {
-                throw new Exception("ExportToExcel: \n" + ex.Message);
+                MessageBox.Show("ExportToExcel: \n" + ex.Message);
             }
         }
     }

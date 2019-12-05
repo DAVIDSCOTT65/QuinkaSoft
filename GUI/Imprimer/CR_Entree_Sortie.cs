@@ -16,14 +16,14 @@ namespace GUI.Imprimer {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReport1 : ReportClass {
+    public class CR_Entree_Sortie : ReportClass {
         
-        public CrystalReport1() {
+        public CR_Entree_Sortie() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReport1.rpt";
+                return "CR_Entree_Sortie.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace GUI.Imprimer {
         
         public override string FullResourceName {
             get {
-                return "GUI.Imprimer.CrystalReport1.rpt";
+                return "GUI.Imprimer.CR_Entree_Sortie.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace GUI.Imprimer {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReport1 : Component, ICachedReport {
+    public class CachedCR_Entree_Sortie : Component, ICachedReport {
         
-        public CachedCrystalReport1() {
+        public CachedCR_Entree_Sortie() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace GUI.Imprimer {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReport1 rpt = new CrystalReport1();
+            CR_Entree_Sortie rpt = new CR_Entree_Sortie();
             rpt.Site = this.Site;
             return rpt;
         }

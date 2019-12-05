@@ -1471,6 +1471,11 @@ namespace GUI.Classes
         {
             get { return printDoc.DefaultPageSettings; }
         }
+        public PaperSize PageSize
+        {
+            get { return PageSettings.PaperSize; }
+            set { PageSettings.PaperSize = value; }
+        }
 
         /// <summary>
         /// Spread the columns porportionally accross the page. Default is false.
