@@ -27,7 +27,8 @@ namespace GUI
 
         private void articlesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FrmApprovisionnement frm = new FrmApprovisionnement();
+            frm.ShowDialog();
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -96,6 +97,18 @@ namespace GUI
         {
             UC_Articles sorti = new UC_Articles();
             ChargerUser(sorti);
+        }
+
+        private void nouvelleVenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmSortie frm = new FrmSortie();
+            frm.ShowDialog();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            UC_DashBord frm = new UC_DashBord();
+            ChargerUser(frm);
         }
     }
 }

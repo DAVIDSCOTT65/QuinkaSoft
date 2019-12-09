@@ -264,7 +264,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Home_40px.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Delete_48px.png" />
   </ItemGroup>

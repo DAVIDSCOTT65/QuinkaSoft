@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button8 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button8 = new System.Windows.Forms.Button();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.readMeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.licenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +58,9 @@
             this.dépensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.allDépensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newDépenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -72,6 +75,34 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1370, 49);
             this.panel1.TabIndex = 0;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.approvisionnementToolStripMenuItem,
+            this.venteToolStripMenuItem,
+            this.stockToolStripMenuItem2,
+            this.databaseManagerToolStripMenuItem,
+            this.userToolStripMenuItem,
+            this.dépensesToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(9, 9);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(924, 29);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(0, 49);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1370, 700);
+            this.panel2.TabIndex = 4;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // button8
             // 
@@ -90,38 +121,21 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.approvisionnementToolStripMenuItem,
-            this.venteToolStripMenuItem,
-            this.stockToolStripMenuItem2,
-            this.databaseManagerToolStripMenuItem,
-            this.userToolStripMenuItem,
-            this.dépensesToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(9, 9);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(810, 29);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.toolStripSeparator2,
             this.readMeToolStripMenuItem,
             this.licenceToolStripMenuItem,
             this.aProposToolStripMenuItem,
+            this.toolStripSeparator1,
             this.fermerToolStripMenuItem,
             this.deconnexionToolStripMenuItem});
-            this.fileToolStripMenuItem.Image = global::GUI.Properties.Resources.File_48px;
+            this.fileToolStripMenuItem.Image = global::GUI.Properties.Resources.Home_40px;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(62, 25);
-            this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(84, 25);
+            this.fileToolStripMenuItem.Text = "Home";
             // 
             // readMeToolStripMenuItem
             // 
@@ -214,6 +228,7 @@
             | System.Windows.Forms.Keys.V)));
             this.nouvelleVenteToolStripMenuItem.Size = new System.Drawing.Size(305, 26);
             this.nouvelleVenteToolStripMenuItem.Text = "Nouvelle vente";
+            this.nouvelleVenteToolStripMenuItem.Click += new System.EventHandler(this.nouvelleVenteToolStripMenuItem_Click);
             // 
             // toutesLesVentesToolStripMenuItem
             // 
@@ -333,13 +348,22 @@
             this.newDépenseToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.newDépenseToolStripMenuItem.Text = "New Dépense";
             // 
-            // panel2
+            // toolStripSeparator1
             // 
-            this.panel2.Location = new System.Drawing.Point(0, 49);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1370, 700);
-            this.panel2.TabIndex = 4;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(239, 6);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(242, 26);
+            this.toolStripMenuItem1.Text = "Accueil";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(239, 6);
             // 
             // Form1
             // 
@@ -395,6 +419,9 @@
         private System.Windows.Forms.ToolStripMenuItem articlesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem catégoriesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historiquesESToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
 

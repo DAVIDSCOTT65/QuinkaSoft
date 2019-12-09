@@ -55,73 +55,43 @@ namespace GUI.UserControls
 
         private void button3_Click(object sender, EventArgs e)
         {
-            _inputparameter.delay = 10;
-            _inputparameter.progress = 1200;
-            backgroundWorker1.RunWorkerAsync(_inputparameter);
+            copyAlltoClipboard();
+            Microsoft.Office.Interop.Excel.Application xlexcel;
+            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
+            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
+            object misValue = System.Reflection.Missing.Value;
+            xlexcel = new Microsoft.Office.Interop.Excel.Application();
+            xlexcel.Visible = true;
+            xlWorkBook = xlexcel.Workbooks.Add(misValue);
+            xlWorkSheet = (Microsoft.Office.Interop.Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+            Microsoft.Office.Interop.Excel.Range CR = (Microsoft.Office.Interop.Excel.Range)xlWorkSheet.Cells[1, 1];
+            CR.Select();
+            xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
         }
-        void ExportExcel()
+        private void copyAlltoClipboard()
         {
-            DataTable dt = new DataTable();
-            while (dt.Columns.Count < dgArticle.Columns.Count)
-            {
-                foreach (DataGridViewColumn col in dgArticle.Columns)
-                {
-                    dt.Columns.Add(col.HeaderText.ToString());
-                }
-            }
-
-            foreach (DataGridViewRow row in dgArticle.Rows)
-            {
-                DataRow drow = dt.NewRow();
-                foreach (DataGridViewCell cell in row.Cells)
-                {
-                    drow[cell.ColumnIndex] = cell.Value;
-                }
-                dt.Rows.Add(drow);
-            }
-            string ExcelPath = "Articles_Avec_Stock.xlsx";
-            dt.ExportToExcel(ExcelPath);
+            //to remove the first blank column from datagridview
+            dgArticle.RowHeadersVisible = false;
+            dgArticle.SelectAll();
+            DataObject dataObj = dgArticle.GetClipboardContent();
+            if (dataObj != null)
+                Clipboard.SetDataObject(dataObj);
         }
-        struct DataParameter
-        {
-            public int progress;
-            public int delay;
-        }
-        private DataParameter _inputparameter;
+        
+        
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            int progress = ((DataParameter)e.Argument).progress;
-            int delay = ((DataParameter)e.Argument).delay;
-            int idex = 1;
-            try
-            {
-                for (int i = 0; i < progress; i++)
-                {
-                    backgroundWorker1.ReportProgress(idex++ * 100 / progress, string.Format("Progress data {0}", i));
-                    System.Threading.Thread.Sleep(delay);
-                }
-                ExportExcel();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
         }
 
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            progressBar1.Value = e.ProgressPercentage;
-            labStatus.Text = string.Format("Processing...{0}", e.ProgressPercentage);
-            progressBar1.Update();
+           
         }
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if (e.Error == null)
-            {
-                Thread.Sleep(100);
-                labStatus.Text = "Your data has been successfully exported";
-            }
+           
         }
     }
 }
