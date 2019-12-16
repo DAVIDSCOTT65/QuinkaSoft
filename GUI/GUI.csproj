@@ -144,6 +144,12 @@
       <DependentUpon>CR_Fiche_De_Stock.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Imprimer\CR_Livre_Caisse.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_Livre_Caisse.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserControls\UC_Approvisionnement.cs">
@@ -222,6 +228,10 @@
     <EmbeddedResource Include="Imprimer\CR_Fiche_De_Stock.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CR_Fiche_De_Stock.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imprimer\CR_Livre_Caisse.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_Livre_Caisse.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

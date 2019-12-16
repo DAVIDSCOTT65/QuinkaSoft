@@ -50,5 +50,15 @@ namespace GUI.Forms
                 MessageBox.Show("L'erreur suivant est survenue : " + ex.Message);
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Frm_Connection_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -39,18 +39,20 @@ namespace GUI.UserControls
 
         private void dgArticle_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            try
-            {
-                int i;
-                i = dgArticle.CurrentRow.Index;
+            //try
+            //{
+            //    FrmImpression frm = new FrmImpression();
+            //    int i;
+            //    i = dgArticle.CurrentRow.Index;
                 
-                DynamicClasses.GetInstance().Sortie_Fiche_Stock_Article(dgArticle["ColCode", i].Value.ToString());
-            }
-            catch (Exception ex)
-            {
+            //DynamicClasses.GetInstance().Sortie_Fiche_Stock_Article(dgArticle["ColCode", i].Value.ToString());
+            //    frm.aticleCombo.Text = dgArticle["ColArticle", i].Value.ToString();
+            //}
+            //catch (Exception ex)
+            //{
 
-                MessageBox.Show("L'erreur suivant est survenue : " + ex.Message);
-            }
+            //    MessageBox.Show("L'erreur suivant est survenue : " + ex.Message);
+            //}
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -127,6 +127,30 @@ namespace GUI.Classes
             }
             return identifiant;
         }
+        public string retourCode(string designation)
+        {
+            string code = "";
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT_CODE_ARTICLE";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@designation", 100, DbType.String, designation));
+
+                IDataReader rd = cmd.ExecuteReader();
+
+                if (rd.Read())
+                {
+                    code = rd["Code"].ToString();
+                }
+                rd.Close();
+                rd.Dispose();
+                cmd.Dispose();
+            }
+            return code;
+        }
         public void retourInfoCredit(Label champ1, Label champ2, Label champ3, string valeur)
         {
             
@@ -293,6 +317,49 @@ namespace GUI.Classes
 
 
                     frm.Visible = true;
+
+                }
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("L'erreur suivant est survenue : " + ex.Message);
+            }
+        }
+        public void Sortie_Livre_Caisse_Article(string code, string mois, string annee)
+        {
+            try
+            {
+                FrmImpression frm = new FrmImpression();
+
+
+                if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                    ImplementeConnexion.Instance.Conn.Open();
+                using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+                {
+                    cmd.CommandText = "SELECT_LIVRE_CAISSE";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@code", 30, DbType.String, code));
+                    cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@mois", 30, DbType.String, mois));
+                    cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@annee", 30, DbType.String, annee));
+
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter dscmd = new SqlDataAdapter((SqlCommand)cmd);
+                    dscmd.Fill(ds, "Affichage_Livre_de_Caisse");
+
+                    CR_Livre_Caisse entree = new CR_Livre_Caisse();
+                    entree.SetDataSource(ds);
+
+                    frm.crystalReportViewer1.ReportSource = entree;
+                    frm.crystalReportViewer1.Refresh();
+
+
+                    //frm.Visible = true;
 
                 }
 

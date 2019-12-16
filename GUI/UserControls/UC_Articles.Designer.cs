@@ -44,7 +44,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.ColNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColArticle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -125,7 +125,7 @@
             this.dgArticle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColNum,
             this.ColCode,
-            this.Column2,
+            this.ColArticle,
             this.Column3,
             this.Column4,
             this.Column5,
@@ -238,14 +238,14 @@
             this.ColCode.Name = "ColCode";
             this.ColCode.ReadOnly = true;
             // 
-            // Column2
+            // ColArticle
             // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column2.DataPropertyName = "Designation";
-            this.Column2.HeaderText = "Aticles";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 87;
+            this.ColArticle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ColArticle.DataPropertyName = "Designation";
+            this.ColArticle.HeaderText = "Aticles";
+            this.ColArticle.Name = "ColArticle";
+            this.ColArticle.ReadOnly = true;
+            this.ColArticle.Width = 87;
             // 
             // Column3
             // 
@@ -355,7 +355,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColArticle;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
