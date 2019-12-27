@@ -110,5 +110,11 @@ namespace GUI
             UC_DashBord frm = new UC_DashBord();
             ChargerUser(frm);
         }
+
+        private void catégoriesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAllCategorie frm = new FrmAllCategorie();
+            frm.ShowDialog();
+        }
     }
 }

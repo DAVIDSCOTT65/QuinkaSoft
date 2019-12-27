@@ -46,6 +46,52 @@ namespace ArticlesLibrary
             }
             return Id;
         }
+        public int CountRuptureStock()
+        {
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = "COUNT_RUPTURE";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                IDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    if (dr["NbreRupture"] == DBNull.Value)
+                        Id = 0;
+                    else
+                        Id = Convert.ToInt32(dr["NbreRupture"].ToString());
+
+                }
+                dr.Dispose();
+            }
+            return Id;
+        }
+        public int CountRuptureSoon()
+        {
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = "COUNT_RUPTURE_SUN";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                IDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    if (dr["NbrRupture"] == DBNull.Value)
+                        Id = 0;
+                    else
+                        Id = Convert.ToInt32(dr["NbrRupture"].ToString());
+
+                }
+                dr.Dispose();
+            }
+            return Id;
+        }
         public void Enregistrer(Articles art)
         {
             if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
@@ -85,6 +131,40 @@ namespace ArticlesLibrary
                 dr.Dispose();
             }
             return lst;
+        }
+        public List<Articles> ArticlesRuptures(string procedure)
+        {
+            List<Articles> lst = new List<Articles>();
+
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = procedure;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                IDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    lst.Add(RecuperationRuptures(dr));
+                }
+                dr.Dispose();
+            }
+            return lst;
+        }
+        private Articles RecuperationRuptures(IDataReader dr)
+        {
+            Articles art = new Articles();
+
+            i = i + 1;
+            art.Num = i;
+            art.Code = dr["Code"].ToString();
+            art.Designation = dr["Designation"].ToString();
+            art.QuantiteS = dr["Quantite"].ToString();
+
+
+            return art;
         }
         private Articles RecuperationArticles(IDataReader dr)
         {

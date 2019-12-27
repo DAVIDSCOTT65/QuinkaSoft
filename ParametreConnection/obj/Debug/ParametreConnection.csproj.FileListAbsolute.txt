@@ -2,3 +2,4 @@ E:\DAVID\PROJETBDD\QuinkaStock\ParametreConnection\bin\Debug\ParametreConnection
 E:\DAVID\PROJETBDD\QuinkaStock\ParametreConnection\bin\Debug\ParametreConnection.pdb
 E:\DAVID\PROJETBDD\QuinkaStock\ParametreConnection\obj\Debug\ParametreConnection.dll
 E:\DAVID\PROJETBDD\QuinkaStock\ParametreConnection\obj\Debug\ParametreConnection.pdb
+E:\DAVID\PROJETBDD\QuinkaStock\ParametreConnection\obj\Debug\ParametreConnection.csprojResolveAssemblyReference.cache

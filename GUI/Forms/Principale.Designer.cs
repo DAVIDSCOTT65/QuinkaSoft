@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.button8 = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.readMeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.licenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.fermerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deconnexionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.approvisionnementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,9 +60,7 @@
             this.dépensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.allDépensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newDépenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -75,6 +75,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1370, 49);
             this.panel1.TabIndex = 0;
+            // 
+            // button8
+            // 
+            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.Color.White;
+            this.button8.Image = global::GUI.Properties.Resources.Delete_48px;
+            this.button8.Location = new System.Drawing.Point(1322, 3);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(45, 41);
+            this.button8.TabIndex = 11;
+            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // menuStrip1
             // 
@@ -96,31 +113,6 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(0, 49);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1370, 700);
-            this.panel2.TabIndex = 4;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // button8
-            // 
-            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SeaGreen;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Image = global::GUI.Properties.Resources.Delete_48px;
-            this.button8.Location = new System.Drawing.Point(1322, 3);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(45, 41);
-            this.button8.TabIndex = 11;
-            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -136,6 +128,18 @@
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(84, 25);
             this.fileToolStripMenuItem.Text = "Home";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(242, 26);
+            this.toolStripMenuItem1.Text = "Accueil";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(239, 6);
             // 
             // readMeToolStripMenuItem
             // 
@@ -163,6 +167,11 @@
             | System.Windows.Forms.Keys.A)));
             this.aProposToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
             this.aProposToolStripMenuItem.Text = "A propos";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(239, 6);
             // 
             // fermerToolStripMenuItem
             // 
@@ -273,6 +282,7 @@
             this.catégoriesToolStripMenuItem.Name = "catégoriesToolStripMenuItem";
             this.catégoriesToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
             this.catégoriesToolStripMenuItem.Text = "Catégories";
+            this.catégoriesToolStripMenuItem.Click += new System.EventHandler(this.catégoriesToolStripMenuItem_Click);
             // 
             // historiquesESToolStripMenuItem
             // 
@@ -348,22 +358,13 @@
             this.newDépenseToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.newDépenseToolStripMenuItem.Text = "New Dépense";
             // 
-            // toolStripSeparator1
+            // panel2
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(239, 6);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(242, 26);
-            this.toolStripMenuItem1.Text = "Accueil";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(239, 6);
+            this.panel2.Location = new System.Drawing.Point(0, 49);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1370, 700);
+            this.panel2.TabIndex = 4;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // Form1
             // 

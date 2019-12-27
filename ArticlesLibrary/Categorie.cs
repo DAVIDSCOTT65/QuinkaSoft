@@ -11,6 +11,8 @@ namespace ArticlesLibrary
 {
     public class Categorie
     {
+        int i = 0;
+        public int Num { get; set; }
         public int Id { get; set; }
         public string Designation { get; set; }
         public string Code { get; set; }
@@ -50,6 +52,39 @@ namespace ArticlesLibrary
                 cmd.ExecuteNonQuery();
 
             }
+        }
+        public List<Categorie> AllCategorie()
+        {
+            List<Categorie> lst = new List<Categorie>();
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT_ALL_CATEGORIE";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                IDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    lst.Add(GetDetails(dr));
+                }
+                dr.Dispose();
+            }
+            return lst;
+        }
+        private Categorie GetDetails(IDataReader dr)
+        {
+            Categorie rem = new Categorie();
+
+            i = i + 1;
+
+            rem.Num = i;
+            rem.Id = Convert.ToInt32(dr["NbreArticles"].ToString());
+            rem.Code = dr["CodeCateg"].ToString();
+            rem.Designation = dr["Categorie"].ToString();
+
+            return rem;
         }
     }
 }

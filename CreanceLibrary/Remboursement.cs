@@ -47,6 +47,50 @@ namespace CreanceLibrary
             }
             return Id;
         }
+        public int CountRemboursementToday()
+        {
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT_COUNT_RECOUVREMENT";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                IDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    if (dr["NbrRecouvre"] == DBNull.Value)
+                        Id = 0;
+                    else
+                        Id = Convert.ToInt32(dr["NbrRecouvre"].ToString());
+                }
+                dr.Dispose();
+            }
+            return Id;
+        }
+        public int CountCredit()
+        {
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT_COUNT_CREDIT";
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                IDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    if (dr["NbrRecouvre"] == DBNull.Value)
+                        Id = 0;
+                    else
+                        Id = Convert.ToInt32(dr["NbrRecouvre"].ToString());
+                }
+                dr.Dispose();
+            }
+            return Id;
+        }
         public void Enregistrer(Remboursement remb)
         {
             if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
@@ -86,6 +130,27 @@ namespace CreanceLibrary
             }
             return lst;
         }
+        public List<Remboursement> AllRecouvrement(string procedure)
+        {
+            List<Remboursement> lst = new List<Remboursement>();
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = procedure;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                IDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    lst.Add(GetDetailsRecouvrement(dr));
+                }
+                dr.Dispose();
+            }
+            return lst;
+        }
+        
         private Remboursement GetDetails(IDataReader dr)
         {
             Remboursement rem = new Remboursement();
@@ -102,6 +167,22 @@ namespace CreanceLibrary
             rem.MontantR = dr["Montant_Restant"].ToString();
             rem.CodeClient = dr["Code_Client"].ToString();
             rem.Client = dr["Client"].ToString();
+            rem.Sexe = dr["Sexe"].ToString();
+            rem.Phone = dr["Telephone"].ToString();
+
+
+            return rem;
+        }
+        private Remboursement GetDetailsRecouvrement(IDataReader dr)
+        {
+            Remboursement rem = new Remboursement();
+
+            i = i + 1;
+
+            rem.Num = i;
+            rem.Code = dr["Code"].ToString();
+            rem.Montant = Convert.ToDouble(dr["Montant"].ToString());
+            rem.Client = dr["Noms"].ToString();
             rem.Sexe = dr["Sexe"].ToString();
             rem.Phone = dr["Telephone"].ToString();
 

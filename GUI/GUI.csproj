@@ -66,6 +66,12 @@
     <Compile Include="Classes\My_DataTable_Extensions.cs" />
     <Compile Include="Classes\Pubcon.cs" />
     <Compile Include="Classes\UserSession.cs" />
+    <Compile Include="Forms\FrmAllCategorie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAllCategorie.Designer.cs">
+      <DependentUpon>FrmAllCategorie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmApprovisionnement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,11 +108,23 @@
     <Compile Include="Forms\FrmImpression.Designer.cs">
       <DependentUpon>FrmImpression.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmRecouvrement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRecouvrement.Designer.cs">
+      <DependentUpon>FrmRecouvrement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmRemboursement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FrmRemboursement.Designer.cs">
       <DependentUpon>FrmRemboursement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRuptureStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRuptureStock.Designer.cs">
+      <DependentUpon>FrmRuptureStock.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmSortie.cs">
       <SubType>Form</SubType>
@@ -188,6 +206,9 @@
     <Compile Include="UserControls\UC_Sortie.Designer.cs">
       <DependentUpon>UC_Sortie.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\FrmAllCategorie.resx">
+      <DependentUpon>FrmAllCategorie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmApprovisionnement.resx">
       <DependentUpon>FrmApprovisionnement.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,8 +227,14 @@
     <EmbeddedResource Include="Forms\FrmImpression.resx">
       <DependentUpon>FrmImpression.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRecouvrement.resx">
+      <DependentUpon>FrmRecouvrement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmRemboursement.resx">
       <DependentUpon>FrmRemboursement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRuptureStock.resx">
+      <DependentUpon>FrmRuptureStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmSortie.resx">
       <DependentUpon>FrmSortie.cs</DependentUpon>
@@ -391,6 +418,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_Print_25px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\out-of-stock-1727162-1469027.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Out-of-stock-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Receive Cash_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Money_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cash in Hand_64px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

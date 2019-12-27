@@ -143,6 +143,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cash_in_Hand_64px {
+            get {
+                object obj = ResourceManager.GetObject("Cash in Hand_64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Categorize_48px {
             get {
                 object obj = ResourceManager.GetObject("Categorize_48px", resourceCulture);
@@ -233,6 +243,26 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap images {
+            get {
+                object obj = ResourceManager.GetObject("images", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap images1 {
+            get {
+                object obj = ResourceManager.GetObject("images1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Info_48px {
             get {
                 object obj = ResourceManager.GetObject("Info_48px", resourceCulture);
@@ -263,6 +293,36 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Money_64px {
+            get {
+                object obj = ResourceManager.GetObject("Money_64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap out_of_stock_1727162_1469027 {
+            get {
+                object obj = ResourceManager.GetObject("out-of-stock-1727162-1469027", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Out_of_stock_512 {
+            get {
+                object obj = ResourceManager.GetObject("Out-of-stock-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Price_Tag_48px {
             get {
                 object obj = ResourceManager.GetObject("Price Tag_48px", resourceCulture);
@@ -276,6 +336,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap Receipt_48px {
             get {
                 object obj = ResourceManager.GetObject("Receipt_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Receive_Cash_64px {
+            get {
+                object obj = ResourceManager.GetObject("Receive Cash_64px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
