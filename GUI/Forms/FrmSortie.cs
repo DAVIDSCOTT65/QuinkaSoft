@@ -29,8 +29,7 @@ namespace GUI.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FrmCreance cr = new FrmCreance();
-            cr.ShowDialog();
+            
         }
 
         private void FrmSortie_Load(object sender, EventArgs e)
@@ -151,9 +150,12 @@ namespace GUI.Forms
                     MessageBox.Show("Enregistrements reussies");
 
                     idDetail = 0;
-                    idEntete = 0;
+                    //idEntete = 0;
                     dgManyCotisation.Rows.Clear();
-                    lblTotal.Text = "0,00";
+                    //lblTotal.Text = "0,00";
+                    FrmImpression frm = new FrmImpression();
+                    frm.Sortie_Facture_Vente(idEntete);
+                    frm.ShowDialog();
                 }
                    
 
@@ -187,6 +189,19 @@ namespace GUI.Forms
 
                 
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            if (idEntete <= 0)
+                MessageBox.Show("Rien à signaler, id=0");
+            else
+            {
+                FrmCreance cr = new FrmCreance();
+                cr.idEntete = idEntete;
+                cr.ShowDialog();
+            }
+                
         }
     }
 }

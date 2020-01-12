@@ -21,7 +21,10 @@ namespace GUI.Forms
 
         private void FrmRecouvrement_Load(object sender, EventArgs e)
         {
+            
             ReceiveDatas(new Remboursement());
+            if (dgRecouvr.Rows.Count == 0)
+                lblRecouvr.Visible = true;
         }
         private void ReceiveDatas(Remboursement remb)
         {

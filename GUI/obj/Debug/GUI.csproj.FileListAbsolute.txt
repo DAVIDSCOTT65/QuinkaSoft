@@ -61,3 +61,4 @@ E:\DAVID\PROJETBDD\QuinkaStock\GUI\obj\Debug\GUI.Forms.FrmImpression.resources
 E:\DAVID\PROJETBDD\QuinkaStock\GUI\obj\Debug\GUI.Forms.FrmRuptureStock.resources
 E:\DAVID\PROJETBDD\QuinkaStock\GUI\obj\Debug\GUI.Forms.FrmRecouvrement.resources
 E:\DAVID\PROJETBDD\QuinkaStock\GUI\obj\Debug\GUI.Forms.FrmAllCategorie.resources
+E:\DAVID\PROJETBDD\QuinkaStock\GUI\obj\Debug\GUI.Forms.FrmPopulaire.resources

@@ -108,6 +108,12 @@
     <Compile Include="Forms\FrmImpression.Designer.cs">
       <DependentUpon>FrmImpression.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmPopulaire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPopulaire.Designer.cs">
+      <DependentUpon>FrmPopulaire.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmRecouvrement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,10 +162,22 @@
       <DependentUpon>CR_Entree_Sortie.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Imprimer\CR_Facture.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_Facture.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Imprimer\CR_Fiche_De_Stock.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CR_Fiche_De_Stock.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Imprimer\CR_Liste_Dette.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_Liste_Dette.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Imprimer\CR_Livre_Caisse.cs">
@@ -227,6 +245,9 @@
     <EmbeddedResource Include="Forms\FrmImpression.resx">
       <DependentUpon>FrmImpression.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPopulaire.resx">
+      <DependentUpon>FrmPopulaire.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmRecouvrement.resx">
       <DependentUpon>FrmRecouvrement.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,9 +273,17 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CR_Entree_Sortie.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Imprimer\CR_Facture.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_Facture.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Imprimer\CR_Fiche_De_Stock.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CR_Fiche_De_Stock.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imprimer\CR_Liste_Dette.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_Liste_Dette.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Imprimer\CR_Livre_Caisse.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -439,6 +468,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Cash in Hand_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Star_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Star_52px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Star_52px1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

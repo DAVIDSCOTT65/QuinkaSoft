@@ -48,6 +48,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.codeTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.impBtn = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -270,12 +271,29 @@
             this.label3.TabIndex = 171;
             this.label3.Text = "Code Créance";
             // 
+            // impBtn
+            // 
+            this.impBtn.Enabled = false;
+            this.impBtn.FlatAppearance.BorderSize = 0;
+            this.impBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.impBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.impBtn.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.impBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.impBtn.Image = global::GUI.Properties.Resources.icons8_Print_25px_1;
+            this.impBtn.Location = new System.Drawing.Point(408, 295);
+            this.impBtn.Name = "impBtn";
+            this.impBtn.Size = new System.Drawing.Size(40, 28);
+            this.impBtn.TabIndex = 173;
+            this.impBtn.UseVisualStyleBackColor = true;
+            this.impBtn.Click += new System.EventHandler(this.impBtn_Click);
+            // 
             // FrmCreance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(601, 362);
+            this.Controls.Add(this.impBtn);
             this.Controls.Add(this.codeTxt);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.observCombo);
@@ -330,5 +348,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox codeTxt;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button impBtn;
     }
 }

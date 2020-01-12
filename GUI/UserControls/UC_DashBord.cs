@@ -32,7 +32,8 @@ namespace GUI.UserControls
             lblRuptSoon.Text = art.CountRuptureSoon().ToString() + " Articles";
             lblRecouvrement.Text = remb.CountRemboursementToday().ToString() + " Recouvrements";
             lblCredit.Text = remb.CountCredit().ToString() + " dettes";
-
+            lblPop.Text = art.CountArticlesPop().ToString() + " Articles";
+            lblDormant.Text = art.CountStockFixe().ToString() + " Articles";
         }
         private void lblCaisse_Click(object sender, EventArgs e)
         {
@@ -66,6 +67,21 @@ namespace GUI.UserControls
             FrmRecouvrement frm = new FrmRecouvrement();
             frm.procedure = "SELECT_CREDIT";
             frm.lblTitle.Text = "Toute les dettes";
+            frm.ShowDialog();
+        }
+
+        private void linkLabel8_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmPopulaire frm = new FrmPopulaire();
+            frm.procedure = "SELECT_ARTICLES_POPULAIRE";
+            frm.ShowDialog();
+        }
+
+        private void linkLabel7_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmPopulaire frm = new FrmPopulaire();
+            frm.procedure = "SELECT_STOCK_FIX";
+            frm.label3.Text = "Liste des articles jamais vendus";
             frm.ShowDialog();
         }
     }

@@ -16,6 +16,7 @@ namespace CreanceLibrary
         public DateTime DatePaiement { get; set; }
         public string Code { get; set; }
         public int RefClient { get; set; }
+        public int RefEntete { get; set; }
         public string Observation { get; set; }
         public int NewId()
         {
@@ -52,6 +53,7 @@ namespace CreanceLibrary
                 cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@refcli", 5, DbType.Int32, cr.RefClient));
                 cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@observation", 100, DbType.String, cr.Observation));
                 cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@code", 100, DbType.String, cr.Code));
+                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@refcre", 5, DbType.Int32, cr.RefEntete));
 
                 cmd.ExecuteNonQuery();
 

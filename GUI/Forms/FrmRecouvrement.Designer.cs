@@ -54,6 +54,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.lblRecouvr = new System.Windows.Forms.Label();
             this.panelRupture.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgRecouvr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -100,6 +101,7 @@
             this.panelRupture.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelRupture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelRupture.Controls.Add(this.lblRecouvr);
             this.panelRupture.Controls.Add(this.dgRecouvr);
             this.panelRupture.Controls.Add(this.button1);
             this.panelRupture.Controls.Add(this.button3);
@@ -326,6 +328,18 @@
             this.pictureBox4.TabIndex = 75;
             this.pictureBox4.TabStop = false;
             // 
+            // lblRecouvr
+            // 
+            this.lblRecouvr.AutoSize = true;
+            this.lblRecouvr.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecouvr.ForeColor = System.Drawing.Color.Red;
+            this.lblRecouvr.Location = new System.Drawing.Point(80, 51);
+            this.lblRecouvr.Name = "lblRecouvr";
+            this.lblRecouvr.Size = new System.Drawing.Size(267, 17);
+            this.lblRecouvr.TabIndex = 84;
+            this.lblRecouvr.Text = "Pas de recouvrement à faire aujourd\'hui";
+            this.lblRecouvr.Visible = false;
+            // 
             // FrmRecouvrement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -373,5 +387,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        public System.Windows.Forms.Label lblRecouvr;
     }
 }
