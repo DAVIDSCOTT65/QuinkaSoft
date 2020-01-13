@@ -38,7 +38,7 @@ namespace GUI.Forms
             Articles art = new Articles();
             idArticle = art.NewId();
 
-            codeTxt.Text = "ART00-" + idArticle;
+            //codeTxt.Text = "ART00-" + idArticle;
 
             
         }
@@ -93,6 +93,22 @@ namespace GUI.Forms
             pvuTxt.Text = "0.00";
             uniteTxt.Text = "";
             categCombo.Text = "";
+        }
+
+        private void designationTxt_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (designationTxt.Text != "")
+                    codeTxt.Text = designationTxt.Text.Substring(0, 2) + idArticle;
+                else
+                    codeTxt.Text = "";
+            }
+            catch (Exception)
+            {
+
+                
+            }
         }
     }
 }

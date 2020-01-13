@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -160,10 +162,12 @@
             // 
             // designationTxt
             // 
+            this.designationTxt.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.designationTxt.Location = new System.Drawing.Point(127, 139);
             this.designationTxt.Name = "designationTxt";
             this.designationTxt.Size = new System.Drawing.Size(416, 27);
             this.designationTxt.TabIndex = 111;
+            this.designationTxt.TextChanged += new System.EventHandler(this.designationTxt_TextChanged);
             // 
             // label1
             // 
@@ -263,6 +267,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(40, 28);
             this.button2.TabIndex = 147;
+            this.toolTip1.SetToolTip(this.button2, "Cliquez ici pour générer un Id");
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -345,5 +350,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

@@ -162,6 +162,18 @@
       <DependentUpon>CR_Bilan.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Imprimer\CR_Bon_Entree.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_Bon_Entree.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Imprimer\CR_Bon_Sortie.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_Bon_Sortie.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Imprimer\CR_Entree_Sortie.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -278,6 +290,14 @@
     <EmbeddedResource Include="Imprimer\CR_Bilan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CR_Bilan.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imprimer\CR_Bon_Entree.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_Bon_Entree.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imprimer\CR_Bon_Sortie.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_Bon_Sortie.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Imprimer\CR_Entree_Sortie.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

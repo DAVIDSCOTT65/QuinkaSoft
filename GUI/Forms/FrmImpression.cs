@@ -30,6 +30,92 @@ namespace GUI.Forms
             dn.chargeNomsCombo(monthCombo, "Mois", "SELECT_MONTH");
             dn.chargeNomsCombo(yearCombo, "Annee", "SELECT_YEAR");
         }
+        public void Sortie_Bon_Sortie()
+        {
+            try
+            {
+
+
+
+                if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                    ImplementeConnexion.Instance.Conn.Open();
+                using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+                {
+                    cmd.CommandText = "SELECT_BON_SORTIE";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    //cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@code", 30, DbType.String, code));
+                    //cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@mois", 30, DbType.String, mois));
+                    //cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@annee", 30, DbType.String, annee));
+
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter dscmd = new SqlDataAdapter((SqlCommand)cmd);
+                    dscmd.Fill(ds, "Affichage_Details_Sortie");
+
+                    CR_Bon_Sortie entree = new CR_Bon_Sortie();
+                    entree.SetDataSource(ds);
+
+                    crystalReportViewer1.ReportSource = entree;
+                    crystalReportViewer1.Refresh();
+
+
+
+
+                }
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("L'erreur suivant est survenue : " + ex.Message);
+            }
+        }
+        public void Sortie_Bon_Entree()
+        {
+            try
+            {
+
+
+
+                if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                    ImplementeConnexion.Instance.Conn.Open();
+                using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+                {
+                    cmd.CommandText = "SELECT_BON_ENTREE";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    //cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@code", 30, DbType.String, code));
+                    //cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@mois", 30, DbType.String, mois));
+                    //cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@annee", 30, DbType.String, annee));
+
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter dscmd = new SqlDataAdapter((SqlCommand)cmd);
+                    dscmd.Fill(ds, "Affichage_Approvisionnement");
+
+                    CR_Bon_Entree entree = new CR_Bon_Entree();
+                    entree.SetDataSource(ds);
+
+                    crystalReportViewer1.ReportSource = entree;
+                    crystalReportViewer1.Refresh();
+
+
+
+
+                }
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("L'erreur suivant est survenue : " + ex.Message);
+            }
+        }
         public void Sortie_Fiche_Stock_Article(string code, string mois, string annee)
         {
             try
@@ -326,6 +412,32 @@ namespace GUI.Forms
             {
                 if (yearCombo.Text != "" && monthCombo.Text != "")
                     Sortie_Bilan_Mensuelle(monthCombo.Text, yearCombo.Text);
+            }
+        }
+
+        private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                Sortie_Bon_Entree();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Sortie_Bon_Sortie();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
             }
         }
     }

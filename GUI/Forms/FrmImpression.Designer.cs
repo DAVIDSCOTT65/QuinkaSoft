@@ -36,9 +36,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.yearCombo = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbtnBilan = new System.Windows.Forms.RadioButton();
             this.rbtnFiche = new System.Windows.Forms.RadioButton();
             this.rbtnLivre = new System.Windows.Forms.RadioButton();
-            this.rbtnBilan = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,9 +52,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 77);
+            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 140);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1188, 571);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1188, 508);
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -124,15 +126,29 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.rbtnBilan);
             this.groupBox1.Controls.Add(this.rbtnFiche);
             this.groupBox1.Controls.Add(this.rbtnLivre);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(926, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(248, 69);
+            this.groupBox1.Size = new System.Drawing.Size(248, 120);
             this.groupBox1.TabIndex = 138;
             this.groupBox1.TabStop = false;
+            // 
+            // rbtnBilan
+            // 
+            this.rbtnBilan.AutoSize = true;
+            this.rbtnBilan.Location = new System.Drawing.Point(163, 15);
+            this.rbtnBilan.Name = "rbtnBilan";
+            this.rbtnBilan.Size = new System.Drawing.Size(64, 25);
+            this.rbtnBilan.TabIndex = 2;
+            this.rbtnBilan.TabStop = true;
+            this.rbtnBilan.Text = "Bilan";
+            this.rbtnBilan.UseVisualStyleBackColor = true;
+            this.rbtnBilan.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // rbtnFiche
             // 
@@ -158,17 +174,29 @@
             this.rbtnLivre.UseVisualStyleBackColor = true;
             this.rbtnLivre.CheckedChanged += new System.EventHandler(this.rbtnLivre_CheckedChanged);
             // 
-            // rbtnBilan
+            // radioButton1
             // 
-            this.rbtnBilan.AutoSize = true;
-            this.rbtnBilan.Location = new System.Drawing.Point(163, 15);
-            this.rbtnBilan.Name = "rbtnBilan";
-            this.rbtnBilan.Size = new System.Drawing.Size(64, 25);
-            this.rbtnBilan.TabIndex = 2;
-            this.rbtnBilan.TabStop = true;
-            this.rbtnBilan.Text = "Bilan";
-            this.rbtnBilan.UseVisualStyleBackColor = true;
-            this.rbtnBilan.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(16, 62);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(127, 25);
+            this.radioButton1.TabIndex = 3;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Bon d\'entrée";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged_1);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(16, 89);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(127, 25);
+            this.radioButton2.TabIndex = 4;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Bon de sortie";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // FrmImpression
             // 
@@ -207,5 +235,7 @@
         private System.Windows.Forms.RadioButton rbtnFiche;
         private System.Windows.Forms.RadioButton rbtnLivre;
         private System.Windows.Forms.RadioButton rbtnBilan;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
