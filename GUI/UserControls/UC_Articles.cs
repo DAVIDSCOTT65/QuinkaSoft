@@ -95,5 +95,23 @@ namespace GUI.UserControls
         {
            
         }
+
+        private void serchTxt_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Search(new Articles());
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            
+        }
+        void Search(Articles art)
+        {
+            dgArticle.DataSource = art.Research(serchTxt.Text);
+        }
     }
 }

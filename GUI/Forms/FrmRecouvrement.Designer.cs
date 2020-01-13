@@ -32,10 +32,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRecouvrement));
-            this.serchTxt = new System.Windows.Forms.TextBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panelRupture = new System.Windows.Forms.Panel();
+            this.lblRecouvr = new System.Windows.Forms.Label();
             this.dgRecouvr = new System.Windows.Forms.DataGridView();
             this.ColNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,21 +52,12 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.lblRecouvr = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelRupture.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgRecouvr)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
-            // 
-            // serchTxt
-            // 
-            this.serchTxt.Location = new System.Drawing.Point(20, 71);
-            this.serchTxt.Name = "serchTxt";
-            this.serchTxt.Size = new System.Drawing.Size(349, 27);
-            this.serchTxt.TabIndex = 70;
             // 
             // lblTitle
             // 
@@ -101,18 +92,29 @@
             this.panelRupture.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelRupture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelRupture.Controls.Add(this.label1);
             this.panelRupture.Controls.Add(this.lblRecouvr);
             this.panelRupture.Controls.Add(this.dgRecouvr);
             this.panelRupture.Controls.Add(this.button1);
             this.panelRupture.Controls.Add(this.button3);
-            this.panelRupture.Controls.Add(this.pictureBox1);
             this.panelRupture.Controls.Add(this.pictureBox4);
             this.panelRupture.Controls.Add(this.lblTitle);
-            this.panelRupture.Controls.Add(this.serchTxt);
             this.panelRupture.Location = new System.Drawing.Point(4, 7);
             this.panelRupture.Name = "panelRupture";
             this.panelRupture.Size = new System.Drawing.Size(483, 463);
             this.panelRupture.TabIndex = 75;
+            // 
+            // lblRecouvr
+            // 
+            this.lblRecouvr.AutoSize = true;
+            this.lblRecouvr.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRecouvr.ForeColor = System.Drawing.Color.Red;
+            this.lblRecouvr.Location = new System.Drawing.Point(7, 29);
+            this.lblRecouvr.Name = "lblRecouvr";
+            this.lblRecouvr.Size = new System.Drawing.Size(267, 17);
+            this.lblRecouvr.TabIndex = 84;
+            this.lblRecouvr.Text = "Pas de recouvrement à faire aujourd\'hui";
+            this.lblRecouvr.Visible = false;
             // 
             // dgRecouvr
             // 
@@ -306,17 +308,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(369, 71);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(28, 27);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 79;
-            this.pictureBox1.TabStop = false;
-            // 
             // pictureBox4
             // 
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -328,17 +319,15 @@
             this.pictureBox4.TabIndex = 75;
             this.pictureBox4.TabStop = false;
             // 
-            // lblRecouvr
+            // label1
             // 
-            this.lblRecouvr.AutoSize = true;
-            this.lblRecouvr.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecouvr.ForeColor = System.Drawing.Color.Red;
-            this.lblRecouvr.Location = new System.Drawing.Point(80, 51);
-            this.lblRecouvr.Name = "lblRecouvr";
-            this.lblRecouvr.Size = new System.Drawing.Size(267, 17);
-            this.lblRecouvr.TabIndex = 84;
-            this.lblRecouvr.Text = "Pas de recouvrement à faire aujourd\'hui";
-            this.lblRecouvr.Visible = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(232, 78);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(184, 17);
+            this.label1.TabIndex = 85;
+            this.label1.Text = "Export les données en excel";
             // 
             // FrmRecouvrement
             // 
@@ -357,7 +346,6 @@
             this.panelRupture.ResumeLayout(false);
             this.panelRupture.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgRecouvr)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
@@ -366,11 +354,9 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.TextBox serchTxt;
         public System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Panel panelRupture;
         public System.Windows.Forms.DataGridView dgRecouvr;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColNum;
@@ -388,5 +374,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         public System.Windows.Forms.Label lblRecouvr;
+        private System.Windows.Forms.Label label1;
     }
 }

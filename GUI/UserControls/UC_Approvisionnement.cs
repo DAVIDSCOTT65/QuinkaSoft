@@ -34,5 +34,22 @@ namespace GUI.UserControls
         {
             dgApprov.DataSource = da.AllApprovisionnement();
         }
+
+        private void serchTxt_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Search(new Detail_Approvisionnement());
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+        void Search(Detail_Approvisionnement art)
+        {
+            dgApprov.DataSource = art.Research(serchTxt.Text);
+        }
     }
 }

@@ -220,6 +220,26 @@ namespace ArticlesLibrary
             }
             return lst;
         }
+        public List<Articles> Research(string recherche)
+        {
+            List<Articles> lst = new List<Articles>();
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT * FROM Affichage_Articles WHERE (Articles LIKE '%" + recherche + "%' OR Articles LIKE '%" + recherche + "' OR Articles LIKE '" + recherche + "%')";
+                //cmd.CommandType = CommandType.StoredProcedure;
+
+                IDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    lst.Add(RecuperationArticles(rd));
+                }
+                rd.Dispose();
+                rd.Close();
+            }
+            return lst;
+        }
         private Articles RecuperationRuptures(IDataReader dr)
         {
             Articles art = new Articles();

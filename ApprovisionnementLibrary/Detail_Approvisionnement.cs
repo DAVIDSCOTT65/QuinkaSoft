@@ -90,6 +90,26 @@ namespace ApprovisionnementLibrary
 
             return lst;
         }
+        public List<Detail_Approvisionnement> Research(string recherche)
+        {
+            List<Detail_Approvisionnement> lst = new List<Detail_Approvisionnement>();
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT * FROM Affichage_Approvisionnement WHERE (Articles LIKE '%" + recherche + "%' OR Articles LIKE '%" + recherche + "' OR Articles LIKE '" + recherche + "%') ORDER By Id DESC";
+                //cmd.CommandType = CommandType.StoredProcedure;
+
+                IDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    lst.Add(GetDetails(rd));
+                }
+                rd.Dispose();
+                rd.Close();
+            }
+            return lst;
+        }
         private Detail_Approvisionnement GetDetails(IDataReader dr)
         {
             Detail_Approvisionnement da = new Detail_Approvisionnement();

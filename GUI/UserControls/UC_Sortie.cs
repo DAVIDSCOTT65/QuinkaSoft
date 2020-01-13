@@ -33,5 +33,22 @@ namespace GUI.UserControls
         {
             dgSortie.DataSource = ds.AllSortie();
         }
+
+        private void serchTxt_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Search(new Detail_Sortie());
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+        void Search(Detail_Sortie art)
+        {
+            dgSortie.DataSource = art.Research(serchTxt.Text);
+        }
     }
 }

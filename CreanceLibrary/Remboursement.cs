@@ -150,7 +150,26 @@ namespace CreanceLibrary
             }
             return lst;
         }
-        
+        public List<Remboursement> Research(string recherche)
+        {
+            List<Remboursement> lst = new List<Remboursement>();
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT * FROM Affichage_Details_Remboursement WHERE (Client LIKE '%" + recherche + "%' OR Client LIKE '%" + recherche + "' OR Client LIKE '" + recherche + "%') ORDER By Id DESC";
+                //cmd.CommandType = CommandType.StoredProcedure;
+
+                IDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    lst.Add(GetDetails(rd));
+                }
+                rd.Dispose();
+                rd.Close();
+            }
+            return lst;
+        }
         private Remboursement GetDetails(IDataReader dr)
         {
             Remboursement rem = new Remboursement();

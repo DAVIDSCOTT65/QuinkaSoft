@@ -73,6 +73,26 @@ namespace ArticlesLibrary
             }
             return lst;
         }
+        public List<Categorie> Research(string recherche)
+        {
+            List<Categorie> lst = new List<Categorie>();
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT * FROM Affichage_Categorie WHERE (Categorie LIKE '%" + recherche + "%' OR Categorie LIKE '%" + recherche + "' OR Categorie LIKE '" + recherche + "%') ORDER By NbreArticles DESC";
+                //cmd.CommandType = CommandType.StoredProcedure;
+
+                IDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    lst.Add(GetDetails(rd));
+                }
+                rd.Dispose();
+                rd.Close();
+            }
+            return lst;
+        }
         private Categorie GetDetails(IDataReader dr)
         {
             Categorie rem = new Categorie();

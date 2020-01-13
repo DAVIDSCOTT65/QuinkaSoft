@@ -37,7 +37,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.dgSortie = new System.Windows.Forms.DataGridView();
-            this.serchTxt = new System.Windows.Forms.TextBox();
             this.ColNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +50,7 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serchTxt = new System.Windows.Forms.TextBox();
             this.panelGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgSortie)).BeginInit();
@@ -165,13 +165,6 @@
             this.dgSortie.Size = new System.Drawing.Size(1328, 618);
             this.dgSortie.TabIndex = 59;
             // 
-            // serchTxt
-            // 
-            this.serchTxt.Location = new System.Drawing.Point(404, 13);
-            this.serchTxt.Name = "serchTxt";
-            this.serchTxt.Size = new System.Drawing.Size(856, 27);
-            this.serchTxt.TabIndex = 70;
-            // 
             // ColNum
             // 
             this.ColNum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -272,6 +265,14 @@
             this.Column11.HeaderText = "Date de sortie";
             this.Column11.Name = "Column11";
             this.Column11.ReadOnly = true;
+            // 
+            // serchTxt
+            // 
+            this.serchTxt.Location = new System.Drawing.Point(404, 13);
+            this.serchTxt.Name = "serchTxt";
+            this.serchTxt.Size = new System.Drawing.Size(856, 27);
+            this.serchTxt.TabIndex = 70;
+            this.serchTxt.TextChanged += new System.EventHandler(this.serchTxt_TextChanged);
             // 
             // UC_Sortie
             // 

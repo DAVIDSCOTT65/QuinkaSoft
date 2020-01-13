@@ -36,8 +36,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.yearCombo = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbtnLivre = new System.Windows.Forms.RadioButton();
             this.rbtnFiche = new System.Windows.Forms.RadioButton();
+            this.rbtnLivre = new System.Windows.Forms.RadioButton();
+            this.rbtnBilan = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,14 +124,27 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.rbtnBilan);
             this.groupBox1.Controls.Add(this.rbtnFiche);
             this.groupBox1.Controls.Add(this.rbtnLivre);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(926, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(167, 69);
+            this.groupBox1.Size = new System.Drawing.Size(248, 69);
             this.groupBox1.TabIndex = 138;
             this.groupBox1.TabStop = false;
+            // 
+            // rbtnFiche
+            // 
+            this.rbtnFiche.AutoSize = true;
+            this.rbtnFiche.Location = new System.Drawing.Point(16, 38);
+            this.rbtnFiche.Name = "rbtnFiche";
+            this.rbtnFiche.Size = new System.Drawing.Size(141, 25);
+            this.rbtnFiche.TabIndex = 1;
+            this.rbtnFiche.TabStop = true;
+            this.rbtnFiche.Text = "Fiche de Stock";
+            this.rbtnFiche.UseVisualStyleBackColor = true;
+            this.rbtnFiche.CheckedChanged += new System.EventHandler(this.rbtnFiche_CheckedChanged);
             // 
             // rbtnLivre
             // 
@@ -144,17 +158,17 @@
             this.rbtnLivre.UseVisualStyleBackColor = true;
             this.rbtnLivre.CheckedChanged += new System.EventHandler(this.rbtnLivre_CheckedChanged);
             // 
-            // rbtnFiche
+            // rbtnBilan
             // 
-            this.rbtnFiche.AutoSize = true;
-            this.rbtnFiche.Location = new System.Drawing.Point(16, 38);
-            this.rbtnFiche.Name = "rbtnFiche";
-            this.rbtnFiche.Size = new System.Drawing.Size(141, 25);
-            this.rbtnFiche.TabIndex = 1;
-            this.rbtnFiche.TabStop = true;
-            this.rbtnFiche.Text = "Fiche de Stock";
-            this.rbtnFiche.UseVisualStyleBackColor = true;
-            this.rbtnFiche.CheckedChanged += new System.EventHandler(this.rbtnFiche_CheckedChanged);
+            this.rbtnBilan.AutoSize = true;
+            this.rbtnBilan.Location = new System.Drawing.Point(163, 15);
+            this.rbtnBilan.Name = "rbtnBilan";
+            this.rbtnBilan.Size = new System.Drawing.Size(64, 25);
+            this.rbtnBilan.TabIndex = 2;
+            this.rbtnBilan.TabStop = true;
+            this.rbtnBilan.Text = "Bilan";
+            this.rbtnBilan.UseVisualStyleBackColor = true;
+            this.rbtnBilan.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // FrmImpression
             // 
@@ -192,5 +206,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbtnFiche;
         private System.Windows.Forms.RadioButton rbtnLivre;
+        private System.Windows.Forms.RadioButton rbtnBilan;
     }
 }

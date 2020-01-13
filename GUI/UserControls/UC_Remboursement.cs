@@ -34,5 +34,22 @@ namespace GUI.UserControls
         {
             dgRembb.DataSource = rem.AllDPayement();
         }
+
+        private void serchTxt_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Search(new Remboursement());
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+        void Search(Remboursement art)
+        {
+            dgRembb.DataSource = art.Research(serchTxt.Text);
+        }
     }
 }

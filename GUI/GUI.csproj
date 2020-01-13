@@ -156,6 +156,12 @@
     <Compile Include="Forms\Principale.Designer.cs">
       <DependentUpon>Principale.cs</DependentUpon>
     </Compile>
+    <Compile Include="Imprimer\CR_Bilan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_Bilan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Imprimer\CR_Entree_Sortie.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -268,6 +274,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Principale.resx">
       <DependentUpon>Principale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Imprimer\CR_Bilan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_Bilan.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Imprimer\CR_Entree_Sortie.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

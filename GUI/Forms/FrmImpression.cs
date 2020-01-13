@@ -73,6 +73,48 @@ namespace GUI.Forms
                 MessageBox.Show("L'erreur suivant est survenue : " + ex.Message);
             }
         }
+        public void Sortie_Bilan_Mensuelle(string mois, string annee)
+        {
+            try
+            {
+
+
+
+                if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                    ImplementeConnexion.Instance.Conn.Open();
+                using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+                {
+                    cmd.CommandText = "SELECT_BILAN_MENSUELLE";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@mois", 30, DbType.String, mois));
+                    cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@year", 30, DbType.String, annee));
+
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter dscmd = new SqlDataAdapter((SqlCommand)cmd);
+                    dscmd.Fill(ds, "Affichage_Bilan_Mensuelle");
+
+                    CR_Bilan entree = new CR_Bilan();
+                    entree.SetDataSource(ds);
+
+                    crystalReportViewer1.ReportSource = entree;
+                    crystalReportViewer1.Refresh();
+
+
+
+
+                }
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("L'erreur suivant est survenue : " + ex.Message);
+            }
+        }
         public void Sortie_Liste_Dette_Client(int code)
         {
             try
@@ -172,6 +214,11 @@ namespace GUI.Forms
                     Sortie_Fiche_Stock_Article(dn.retourCode(aticleCombo.Text), monthCombo.Text, yearCombo.Text);
                 }
             }
+            else if(rbtnBilan.Checked==true)
+            {
+                if (yearCombo.Text != "" && monthCombo.Text != "")
+                    Sortie_Bilan_Mensuelle(monthCombo.Text, yearCombo.Text);
+            }
 
         }
         public void Sortie_Livre_Caisse_Article(string code, string mois, string annee)
@@ -246,6 +293,11 @@ namespace GUI.Forms
                 if (aticleCombo.Text != "" && yearCombo.Text != "")
                     Sortie_Fiche_Stock_Article(dn.retourCode(aticleCombo.Text), monthCombo.Text, yearCombo.Text);
             }
+            else if (rbtnBilan.Checked == true)
+            {
+                if (yearCombo.Text != "" && monthCombo.Text != "")
+                    Sortie_Bilan_Mensuelle(monthCombo.Text, yearCombo.Text);
+            }
 
         }
 
@@ -266,6 +318,15 @@ namespace GUI.Forms
                     Sortie_Fiche_Stock_Article(dn.retourCode(aticleCombo.Text), monthCombo.Text, yearCombo.Text);
             }
                 
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnBilan.Checked == true)
+            {
+                if (yearCombo.Text != "" && monthCombo.Text != "")
+                    Sortie_Bilan_Mensuelle(monthCombo.Text, yearCombo.Text);
+            }
         }
     }
 }

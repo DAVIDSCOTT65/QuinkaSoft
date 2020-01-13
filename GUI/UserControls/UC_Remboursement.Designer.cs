@@ -62,6 +62,7 @@
             this.serchTxt.Name = "serchTxt";
             this.serchTxt.Size = new System.Drawing.Size(856, 27);
             this.serchTxt.TabIndex = 70;
+            this.serchTxt.TextChanged += new System.EventHandler(this.serchTxt_TextChanged);
             // 
             // panelGrid
             // 

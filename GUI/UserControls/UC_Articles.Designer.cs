@@ -37,11 +37,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.dgArticle = new System.Windows.Forms.DataGridView();
-            this.panelGrid = new System.Windows.Forms.Panel();
-            this.labStatus = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.button3 = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.ColNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColArticle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +50,11 @@
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelGrid = new System.Windows.Forms.Panel();
+            this.labStatus = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.button3 = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgArticle)).BeginInit();
             this.panelGrid.SuspendLayout();
@@ -66,6 +66,7 @@
             this.serchTxt.Name = "serchTxt";
             this.serchTxt.Size = new System.Drawing.Size(846, 27);
             this.serchTxt.TabIndex = 70;
+            this.serchTxt.TextChanged += new System.EventHandler(this.serchTxt_TextChanged);
             // 
             // label1
             // 
@@ -160,67 +161,6 @@
             this.dgArticle.Size = new System.Drawing.Size(1334, 634);
             this.dgArticle.TabIndex = 59;
             this.dgArticle.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgArticle_MouseDoubleClick);
-            // 
-            // panelGrid
-            // 
-            this.panelGrid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelGrid.Controls.Add(this.labStatus);
-            this.panelGrid.Controls.Add(this.progressBar1);
-            this.panelGrid.Controls.Add(this.button3);
-            this.panelGrid.Controls.Add(this.label1);
-            this.panelGrid.Controls.Add(this.button1);
-            this.panelGrid.Controls.Add(this.pictureBox4);
-            this.panelGrid.Controls.Add(this.dgArticle);
-            this.panelGrid.Controls.Add(this.serchTxt);
-            this.panelGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelGrid.Location = new System.Drawing.Point(0, 0);
-            this.panelGrid.Name = "panelGrid";
-            this.panelGrid.Size = new System.Drawing.Size(1342, 700);
-            this.panelGrid.TabIndex = 75;
-            // 
-            // labStatus
-            // 
-            this.labStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labStatus.AutoSize = true;
-            this.labStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labStatus.Location = new System.Drawing.Point(659, 327);
-            this.labStatus.Name = "labStatus";
-            this.labStatus.Size = new System.Drawing.Size(104, 17);
-            this.labStatus.TabIndex = 83;
-            this.labStatus.Text = "Prossessing...0%";
-            this.labStatus.Visible = false;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(575, 349);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(191, 23);
-            this.progressBar1.TabIndex = 84;
-            this.progressBar1.Visible = false;
-            // 
-            // button3
-            // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.button3.Image = global::GUI.Properties.Resources.icons8_Microsoft_Excel_25px_1;
-            this.button3.Location = new System.Drawing.Point(1263, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(40, 28);
-            this.button3.TabIndex = 81;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // backgroundWorker1
-            // 
-            this.backgroundWorker1.WorkerReportsProgress = true;
-            this.backgroundWorker1.WorkerSupportsCancellation = true;
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
-            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
             // ColNum
             // 
@@ -321,6 +261,67 @@
             this.Column12.Name = "Column12";
             this.Column12.ReadOnly = true;
             this.Column12.Visible = false;
+            // 
+            // panelGrid
+            // 
+            this.panelGrid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelGrid.Controls.Add(this.labStatus);
+            this.panelGrid.Controls.Add(this.progressBar1);
+            this.panelGrid.Controls.Add(this.button3);
+            this.panelGrid.Controls.Add(this.label1);
+            this.panelGrid.Controls.Add(this.button1);
+            this.panelGrid.Controls.Add(this.pictureBox4);
+            this.panelGrid.Controls.Add(this.dgArticle);
+            this.panelGrid.Controls.Add(this.serchTxt);
+            this.panelGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelGrid.Location = new System.Drawing.Point(0, 0);
+            this.panelGrid.Name = "panelGrid";
+            this.panelGrid.Size = new System.Drawing.Size(1342, 700);
+            this.panelGrid.TabIndex = 75;
+            // 
+            // labStatus
+            // 
+            this.labStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.labStatus.AutoSize = true;
+            this.labStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labStatus.Location = new System.Drawing.Point(659, 327);
+            this.labStatus.Name = "labStatus";
+            this.labStatus.Size = new System.Drawing.Size(104, 17);
+            this.labStatus.TabIndex = 83;
+            this.labStatus.Text = "Prossessing...0%";
+            this.labStatus.Visible = false;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBar1.Location = new System.Drawing.Point(575, 349);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(191, 23);
+            this.progressBar1.TabIndex = 84;
+            this.progressBar1.Visible = false;
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.button3.Image = global::GUI.Properties.Resources.icons8_Microsoft_Excel_25px_1;
+            this.button3.Location = new System.Drawing.Point(1263, 12);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(40, 28);
+            this.button3.TabIndex = 81;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.WorkerSupportsCancellation = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorker1_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
             // UC_Articles
             // 

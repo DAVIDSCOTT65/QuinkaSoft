@@ -36,5 +36,22 @@ namespace GUI.Forms
         {
 
         }
+
+        private void serchTxt_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Search(new Categorie());
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+        void Search(Categorie art)
+        {
+            dgCategorie.DataSource = art.Research(serchTxt.Text);
+        }
     }
 }

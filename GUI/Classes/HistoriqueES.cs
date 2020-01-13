@@ -42,6 +42,26 @@ namespace GUI.Classes
             }
             return lst;
         }
+        public List<HistoriqueES> Research(string recherche)
+        {
+            List<HistoriqueES> lst = new List<HistoriqueES>();
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT * FROM Affichage_Details_Historique WHERE (LIBELLE LIKE '%" + recherche + "%' OR LIBELLE LIKE '%" + recherche + "' OR LIBELLE LIKE '" + recherche + "%' OR Articles LIKE '%" + recherche + "%' OR Articles LIKE '%" + recherche + "' OR Articles LIKE '" + recherche + "%') ORDER By Id DESC";
+                //cmd.CommandType = CommandType.StoredProcedure;
+
+                IDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    lst.Add(GetHistori(rd));
+                }
+                rd.Dispose();
+                rd.Close();
+            }
+            return lst;
+        }
         private HistoriqueES GetHistori(IDataReader dr)
         {
             HistoriqueES h = new HistoriqueES();

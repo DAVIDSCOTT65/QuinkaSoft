@@ -168,5 +168,27 @@ namespace GUI.UserControls
         {
             DynamicClasses.GetInstance().Sortie_Entree_Sortie();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void serchTxt_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Search(new HistoriqueES());
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+        void Search(HistoriqueES art)
+        {
+            dgHistorique.DataSource = art.Research(serchTxt.Text);
+        }
     }
 }

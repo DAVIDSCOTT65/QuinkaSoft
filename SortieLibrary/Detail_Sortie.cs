@@ -86,6 +86,26 @@ namespace SortieLibrary
             }
             return lst;
         }
+        public List<Detail_Sortie> Research(string recherche)
+        {
+            List<Detail_Sortie> lst = new List<Detail_Sortie>();
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT * FROM Affichage_Details_Sortie WHERE (Designation LIKE '%" + recherche + "%' OR Designation LIKE '%" + recherche + "' OR Designation LIKE '" + recherche + "%') ORDER By Id DESC";
+                //cmd.CommandType = CommandType.StoredProcedure;
+
+                IDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    lst.Add(GetDetails(rd));
+                }
+                rd.Dispose();
+                rd.Close();
+            }
+            return lst;
+        }
         private Detail_Sortie GetDetails(IDataReader dr)
         {
             Detail_Sortie ds = new Detail_Sortie();
