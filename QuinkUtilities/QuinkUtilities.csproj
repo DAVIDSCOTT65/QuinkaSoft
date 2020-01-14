@@ -44,6 +44,7 @@
     <Compile Include="ClsConnection.cs" />
     <Compile Include="ClsConstantes.cs" />
     <Compile Include="ClsGetDatas.cs" />
+    <Compile Include="DatabaseBackupOrRestor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

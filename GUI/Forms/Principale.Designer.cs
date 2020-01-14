@@ -40,7 +40,6 @@
             this.aProposToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.fermerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deconnexionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.approvisionnementToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.articlesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.catégorieToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,7 +53,6 @@
             this.historiquesESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.databaseManagerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.restaurationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monitoringToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,7 +60,6 @@
             this.allDépensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newDépenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +74,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1370, 49);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button8
             // 
@@ -123,11 +121,9 @@
             this.readMeToolStripMenuItem,
             this.licenceToolStripMenuItem,
             this.toolStripMenuItem2,
-            this.toolStripMenuItem3,
             this.aProposToolStripMenuItem,
             this.toolStripSeparator1,
-            this.fermerToolStripMenuItem,
-            this.deconnexionToolStripMenuItem});
+            this.fermerToolStripMenuItem});
             this.fileToolStripMenuItem.Image = global::GUI.Properties.Resources.Home_40px;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(84, 25);
@@ -179,6 +175,7 @@
             | System.Windows.Forms.Keys.A)));
             this.aProposToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
             this.aProposToolStripMenuItem.Text = "A propos";
+            this.aProposToolStripMenuItem.Click += new System.EventHandler(this.aProposToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -193,12 +190,7 @@
             | System.Windows.Forms.Keys.F)));
             this.fermerToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
             this.fermerToolStripMenuItem.Text = "Fermer";
-            // 
-            // deconnexionToolStripMenuItem
-            // 
-            this.deconnexionToolStripMenuItem.Name = "deconnexionToolStripMenuItem";
-            this.deconnexionToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
-            this.deconnexionToolStripMenuItem.Text = "Deconnexion";
+            this.fermerToolStripMenuItem.Click += new System.EventHandler(this.fermerToolStripMenuItem_Click);
             // 
             // approvisionnementToolStripMenuItem
             // 
@@ -307,8 +299,7 @@
             // databaseManagerToolStripMenuItem
             // 
             this.databaseManagerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.backupToolStripMenuItem,
-            this.restaurationToolStripMenuItem});
+            this.backupToolStripMenuItem});
             this.databaseManagerToolStripMenuItem.Image = global::GUI.Properties.Resources.Database_Administrator_48px;
             this.databaseManagerToolStripMenuItem.Name = "databaseManagerToolStripMenuItem";
             this.databaseManagerToolStripMenuItem.Size = new System.Drawing.Size(194, 25);
@@ -317,14 +308,9 @@
             // backupToolStripMenuItem
             // 
             this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
-            this.backupToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.backupToolStripMenuItem.Text = "Backup";
-            // 
-            // restaurationToolStripMenuItem
-            // 
-            this.restaurationToolStripMenuItem.Name = "restaurationToolStripMenuItem";
-            this.restaurationToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
-            this.restaurationToolStripMenuItem.Text = "Restauration";
+            this.backupToolStripMenuItem.Size = new System.Drawing.Size(197, 26);
+            this.backupToolStripMenuItem.Text = "Backup&Restore";
+            this.backupToolStripMenuItem.Click += new System.EventHandler(this.backupToolStripMenuItem_Click);
             // 
             // userToolStripMenuItem
             // 
@@ -341,12 +327,14 @@
             this.utilisateurToolStripMenuItem.Name = "utilisateurToolStripMenuItem";
             this.utilisateurToolStripMenuItem.Size = new System.Drawing.Size(164, 26);
             this.utilisateurToolStripMenuItem.Text = "Utilisateur";
+            this.utilisateurToolStripMenuItem.Click += new System.EventHandler(this.utilisateurToolStripMenuItem_Click);
             // 
             // monitoringToolStripMenuItem
             // 
             this.monitoringToolStripMenuItem.Name = "monitoringToolStripMenuItem";
             this.monitoringToolStripMenuItem.Size = new System.Drawing.Size(164, 26);
             this.monitoringToolStripMenuItem.Text = "Monitoring";
+            this.monitoringToolStripMenuItem.Click += new System.EventHandler(this.monitoringToolStripMenuItem_Click);
             // 
             // dépensesToolStripMenuItem
             // 
@@ -377,13 +365,6 @@
             this.panel2.Size = new System.Drawing.Size(1370, 700);
             this.panel2.TabIndex = 4;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(242, 26);
-            this.toolStripMenuItem3.Text = "Agent";
-            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // Form1
             // 
@@ -417,13 +398,11 @@
         private System.Windows.Forms.ToolStripMenuItem licenceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aProposToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fermerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deconnexionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem venteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nouvelleVenteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toutesLesVentesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem databaseManagerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem restaurationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem userToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem utilisateurToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem monitoringToolStripMenuItem;
@@ -443,7 +422,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
     }
 }
 

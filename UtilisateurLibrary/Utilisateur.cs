@@ -69,7 +69,7 @@ namespace UtilisateurLibrary
                 cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@sexe", 1, DbType.String, det.Sexe));
                 cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@adresse", 5, DbType.String, det.Adresse));
                 cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@contact", 20, DbType.String, det.Telephone));
-                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@email", 20, DbType.String, det.Email));
+                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@email", 100, DbType.String, det.Email));
                 cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@fonction", 50, DbType.String, det.Fonction));
                 cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@pseudo", 20, DbType.String, det.Pseudo));
                 cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@password", 100, DbType.String, det.PassWord));

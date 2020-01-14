@@ -84,11 +84,23 @@
     <Compile Include="Forms\FrmApprovisionnement.Designer.cs">
       <DependentUpon>FrmApprovisionnement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmApropos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmApropos.Designer.cs">
+      <DependentUpon>FrmApropos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmArticle.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FrmArticle.Designer.cs">
       <DependentUpon>FrmArticle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmBackRestore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmBackRestore.Designer.cs">
+      <DependentUpon>FrmBackRestore.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmCategorie.cs">
       <SubType>Form</SubType>
@@ -242,6 +254,12 @@
     <Compile Include="UserControls\UC_Historique.Designer.cs">
       <DependentUpon>UC_Historique.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UC_Monitoring.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Monitoring.Designer.cs">
+      <DependentUpon>UC_Monitoring.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UC_Remboursement.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -269,8 +287,14 @@
     <EmbeddedResource Include="Forms\FrmApprovisionnement.resx">
       <DependentUpon>FrmApprovisionnement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmApropos.resx">
+      <DependentUpon>FrmApropos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmArticle.resx">
       <DependentUpon>FrmArticle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmBackRestore.resx">
+      <DependentUpon>FrmBackRestore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmCategorie.resx">
       <DependentUpon>FrmCategorie.cs</DependentUpon>
@@ -364,6 +388,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_Historique.resx">
       <DependentUpon>UC_Historique.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_Monitoring.resx">
+      <DependentUpon>UC_Monitoring.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_Remboursement.resx">
       <DependentUpon>UC_Remboursement.cs</DependentUpon>
@@ -534,6 +561,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Star_52px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dav.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pass.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_4397.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pass1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG_20180330_120358.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ged.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ros.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

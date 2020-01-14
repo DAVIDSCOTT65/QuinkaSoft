@@ -173,6 +173,16 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Dav {
+            get {
+                object obj = ResourceManager.GetObject("Dav", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Delete_48px {
             get {
                 object obj = ResourceManager.GetObject("Delete_48px", resourceCulture);
@@ -196,6 +206,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap File_48px {
             get {
                 object obj = ResourceManager.GetObject("File_48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ged {
+            get {
+                object obj = ResourceManager.GetObject("Ged", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,6 +283,26 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IMG_20180330_120358 {
+            get {
+                object obj = ResourceManager.GetObject("IMG_20180330_120358", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IMG_4397 {
+            get {
+                object obj = ResourceManager.GetObject("IMG_4397", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Info_48px {
             get {
                 object obj = ResourceManager.GetObject("Info_48px", resourceCulture);
@@ -323,6 +363,26 @@ namespace GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Pass {
+            get {
+                object obj = ResourceManager.GetObject("Pass", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pass1 {
+            get {
+                object obj = ResourceManager.GetObject("Pass1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Price_Tag_48px {
             get {
                 object obj = ResourceManager.GetObject("Price Tag_48px", resourceCulture);
@@ -366,6 +426,16 @@ namespace GUI.Properties {
         internal static System.Drawing.Bitmap Refresh_40px {
             get {
                 object obj = ResourceManager.GetObject("Refresh_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Ros {
+            get {
+                object obj = ResourceManager.GetObject("Ros", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

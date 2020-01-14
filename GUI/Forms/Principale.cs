@@ -15,6 +15,7 @@ namespace GUI
 {
     public partial class Form1 : Form
     {
+        public int backUp = 0;
         public Form1()
         {
             InitializeComponent();
@@ -22,9 +23,21 @@ namespace GUI
 
         private void button8_Click(object sender, EventArgs e)
         {
+            CloseSoft();
+        }
+        private void CloseSoft()
+        {
+            FrmBackRestore frm = new FrmBackRestore();
+            Deconnexion();
+            frm.BackUpDefault();
             Application.Exit();
         }
-
+        private void Deconnexion()
+        {
+            ClsMonitoring mon = new ClsMonitoring();
+            mon.Operation = "Déconnexion";
+            mon.Enregistrer(mon);
+        }
         private void articlesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmApprovisionnement frm = new FrmApprovisionnement();
@@ -130,8 +143,47 @@ namespace GUI
 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
+            //UC_Utilisateur approv = new UC_Utilisateur();
+            //ChargerUser(approv);
+        }
+
+        private void utilisateurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             UC_Utilisateur approv = new UC_Utilisateur();
             ChargerUser(approv);
+        }
+
+        private void fermerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CloseSoft();
+        }
+
+        private void deconnexionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void monitoringToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UC_Monitoring approv = new UC_Monitoring();
+            ChargerUser(approv);
+        }
+
+        private void backupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBackRestore frm = new FrmBackRestore();
+            frm.Show();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void aProposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmApropos frm = new FrmApropos();
+            frm.Show();
         }
     }
 }

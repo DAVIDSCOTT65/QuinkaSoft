@@ -65,10 +65,8 @@ namespace GUI.Classes
                 ImplementeConnexion.Instance.Conn.Open();
             using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
             {
-                DateTime dt = DateTime.Now;
-                string now;
-                now = dt.ToString("yyyy-MM-dd");
-                cmd.CommandText = "SELECT * FROM Affichage_Details_Monitoring WHERE Date_Operation='" + now.ToString() + "' AND (Noms LIKE '%" + recherche + "%' OR Operation LIKE '" + recherche + "%')";
+                
+                cmd.CommandText = "SELECT * FROM Affichage_Details_Monitoring WHERE (Noms LIKE '%" + recherche + "%' OR Noms LIKE '" + recherche + "%' OR Noms LIKE '%" + recherche + "') ORDER BY Id DESC";
                 //cmd.CommandType = CommandType.StoredProcedure;
 
                 IDataReader rd = cmd.ExecuteReader();
