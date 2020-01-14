@@ -66,6 +66,12 @@
     <Compile Include="Classes\My_DataTable_Extensions.cs" />
     <Compile Include="Classes\Pubcon.cs" />
     <Compile Include="Classes\UserSession.cs" />
+    <Compile Include="Forms\FrmAgent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAgent.Designer.cs">
+      <DependentUpon>FrmAgent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmAllCategorie.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,12 @@
     </Compile>
     <Compile Include="Forms\FrmImpression.Designer.cs">
       <DependentUpon>FrmImpression.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMaison.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMaison.Designer.cs">
+      <DependentUpon>FrmMaison.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmPopulaire.cs">
       <SubType>Form</SubType>
@@ -242,6 +254,15 @@
     <Compile Include="UserControls\UC_Sortie.Designer.cs">
       <DependentUpon>UC_Sortie.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UC_Utilisateur.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UC_Utilisateur.Designer.cs">
+      <DependentUpon>UC_Utilisateur.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\FrmAgent.resx">
+      <DependentUpon>FrmAgent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmAllCategorie.resx">
       <DependentUpon>FrmAllCategorie.cs</DependentUpon>
     </EmbeddedResource>
@@ -262,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmImpression.resx">
       <DependentUpon>FrmImpression.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMaison.resx">
+      <DependentUpon>FrmMaison.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmPopulaire.resx">
       <DependentUpon>FrmPopulaire.cs</DependentUpon>
@@ -346,6 +370,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UC_Sortie.resx">
       <DependentUpon>UC_Sortie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UC_Utilisateur.resx">
+      <DependentUpon>UC_Utilisateur.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -16,7 +16,9 @@ namespace UtilisateurLibrary
         int _id;
         string _nom;
         string _adresse;
-        string _telephone;
+        string _telephone1;
+        string _telephone2;
+        string _telephone3;
         string _mail;
         Image _logo;
         string _siteweb;
@@ -64,16 +66,40 @@ namespace UtilisateurLibrary
             }
         }
 
-        public string Telephone
+        public string Telephone1
         {
             get
             {
-                return _telephone;
+                return _telephone1;
             }
 
             set
             {
-                _telephone = value;
+                _telephone1 = value;
+            }
+        }
+        public string Telephone2
+        {
+            get
+            {
+                return _telephone2;
+            }
+
+            set
+            {
+                _telephone2 = value;
+            }
+        }
+        public string Telephone3
+        {
+            get
+            {
+                return _telephone3;
+            }
+
+            set
+            {
+                _telephone3 = value;
             }
         }
 
@@ -179,31 +205,33 @@ namespace UtilisateurLibrary
         }
         public void Enregistrer(Maison tonti)
         {
-            
-                if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
-                    ImplementeConnexion.Instance.Conn.Open();
-                using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
-                {
-                    cmd.CommandText = "INSERT_MAISON";
-                    cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@id", 4, DbType.Int32, Id));
-                    cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@nom", 100, DbType.String, Nom.Trim()));
-                    cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@adresse", 100, DbType.String, Adresse.Trim()));
-                    cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@telephone", 20, DbType.String, Telephone.Trim()));
-                    cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@mail", 100, DbType.String, Mail.Trim()));
-                    cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@logo", int.MaxValue, DbType.Binary, converttoByteImage(Logo)));
-                    cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@siteweb", 100, DbType.String, Siteweb.Trim()));
-                    cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@boitePostal", 100, DbType.String, BoitePostal.Trim()));
-                    cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@rccm", 100, DbType.String, Rccm.Trim()));
-                    cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@idNat", 100, DbType.String, IdNat.Trim()));
-                    cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@NumImpot", 100, DbType.String, NumImpot.Trim()));
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = "INSERT_MAISON";
+                cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.ExecuteNonQuery();
-                    
+                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@id", 4, DbType.Int32, Id));
+                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@nom", 100, DbType.String, Nom.Trim()));
+                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@adresse", 100, DbType.String, Adresse.Trim()));
+                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@telephone", 20, DbType.String, Telephone1.Trim()));
+                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@telephone2", 20, DbType.String, Telephone2.Trim()));
+                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@telephone3", 20, DbType.String, Telephone3.Trim()));
+                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@mail", 100, DbType.String, Mail.Trim()));
+                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@logo", int.MaxValue, DbType.Binary, converttoByteImage(Logo)));
+                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@siteweb", 100, DbType.String, Siteweb.Trim()));
+                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@boitePostal", 100, DbType.String, BoitePostal.Trim()));
+                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@rccm", 100, DbType.String, Rccm.Trim()));
+                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@idNat", 100, DbType.String, IdNat.Trim()));
+                cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@NumImpot", 100, DbType.String, NumImpot.Trim()));
 
-                }
-           
+                cmd.ExecuteNonQuery();
+
+
+            }
+
         }
         public List<Maison> Details()
         {
@@ -233,7 +261,9 @@ namespace UtilisateurLibrary
             tont.Id = Convert.ToInt32(dr["Id"].ToString());
             tont.Nom = dr["Nom"].ToString();
             tont.Adresse = dr["Adresse"].ToString();
-            tont.Telephone = dr["Telephone"].ToString();
+            tont.Telephone1 = dr["Telephone"].ToString();
+            tont.Telephone2 = dr["Telephone2"].ToString();
+            tont.Telephone3 = dr["Telephone3"].ToString();
             tont.Mail = dr["Mail"].ToString();
             tont.Siteweb = dr["Siteweb"].ToString();
             tont.BoitePostal = dr["BoitePostal"].ToString();

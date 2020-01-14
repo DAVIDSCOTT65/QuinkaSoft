@@ -116,5 +116,22 @@ namespace GUI
             FrmAllCategorie frm = new FrmAllCategorie();
             frm.ShowDialog();
         }
+
+        private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            FrmMaison frm = new FrmMaison();
+            frm.ShowDialog();
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            UC_Utilisateur approv = new UC_Utilisateur();
+            ChargerUser(approv);
+        }
     }
 }

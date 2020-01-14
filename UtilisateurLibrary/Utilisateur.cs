@@ -78,5 +78,43 @@ namespace UtilisateurLibrary
                 cmd.ExecuteNonQuery();
             }
         }
+        public List<Utilisateur> AllUser()
+        {
+            List<Utilisateur> lst = new List<Utilisateur>();
+
+            if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                ImplementeConnexion.Instance.Conn.Open();
+            using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+            {
+                cmd.CommandText = "SELECT_UTILISATEURS";
+                cmd.CommandType = CommandType.StoredProcedure;
+                IDataReader dr = cmd.ExecuteReader();
+
+                while(dr.Read())
+                {
+                    lst.Add(GedUser(dr));
+                }
+                dr.Dispose();
+            }
+
+
+            return lst;
+        }
+        private Utilisateur GedUser(IDataReader dr)
+        {
+            Utilisateur u = new Utilisateur();
+
+            u.Id = Convert.ToInt32(dr["Id"].ToString());
+            u.Noms = dr["Noms"].ToString();
+            u.Sexe = dr["Sexe"].ToString();
+            u.Adresse = dr["Adresse"].ToString();
+            u.Telephone = dr["Telephone"].ToString();
+            u.Email = dr["Email"].ToString();
+            u.Fonction = dr["Fonction"].ToString();
+            u.Pseudo = dr["Pseudo"].ToString();
+            u.PassWord = dr["PassWords"].ToString();
+
+            return u;
+        }
     }
 }

@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +18,7 @@ namespace GUI.Classes
     public class DynamicClasses
     {
         SqlDataReader dr = null;
+        SqlDataAdapter dt = null;
 
         public static DynamicClasses _intance = null;
 
@@ -372,6 +375,46 @@ namespace GUI.Classes
 
                 MessageBox.Show("L'erreur suivant est survenue : " + ex.Message);
             }
+        }
+        public void retreivePhoto(string valeur, PictureBox photo, string procedure)
+        {
+            try
+            {
+                if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                    ImplementeConnexion.Instance.Conn.Open();
+                using (IDbCommand cmd = ImplementeConnexion.Instance.Conn.CreateCommand())
+                {
+                    cmd.CommandText = procedure;
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add(Parametre.Instance.AddParametres(cmd, "@id", 50, DbType.Int32, valeur));
+
+                    dt = new SqlDataAdapter((SqlCommand)cmd);
+                    Object resultat = cmd.ExecuteScalar();
+                    if (DBNull.Value == (resultat))
+                    {
+                    }
+                    else
+                    {
+                        //Byte[] buffer = (Byte[])resultat;
+                        //MemoryStream ms = new MemoryStream(buffer);
+                        //Image image = Image.FromStream(ms);
+                        //photo.Image = image;
+
+                        Byte[] buffer = (Byte[])resultat;
+                        MemoryStream ms = new MemoryStream(buffer);
+                        Image image = Image.FromStream(ms);
+                        photo.Image = image;
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cette erreur est survenue lors du chargement de la photo : " + ex.Message);
+            }
+
         }
     }
 }
