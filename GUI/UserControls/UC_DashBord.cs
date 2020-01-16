@@ -22,10 +22,18 @@ namespace GUI.UserControls
         public UC_DashBord()
         {
             InitializeComponent();
+            timer1.Start();
+            loadPhoto(UserSession.GetInstance().Id.ToString(), avatarPic);
         }
-
+        void loadPhoto(string id, PictureBox pic)
+        {
+            DynamicClasses dn = new DynamicClasses();
+            dn.retreivePhoto(id, pic, "SELECT_PHOTO");
+        }
         private void UC_DashBord_Load(object sender, EventArgs e)
         {
+            lblNom.Text = UserSession.GetInstance().UserName +" Connecté(e)";
+            lblFonction.Text = UserSession.GetInstance().Fonction;
             dn.chargeNomsCombo(yearCombo, "Annee", "SELECT_YEAR");
             yearCombo.SelectedIndex = 0;
             ArticleRuptures();
@@ -46,8 +54,8 @@ namespace GUI.UserControls
 
 
 
-                chartWeek.ChartAreas["ChartAreas1"].AxisX.Title = "Mois";
                 chartWeek.ChartAreas["ChartAreas1"].AxisX.Title = "Montant";
+                chartWeek.ChartAreas["ChartAreas1"].AxisX.Title = "Mois";
 
                 chartWeek.Series["Variation"].XValueMember = "Mois";
                 chartWeek.Series["Variation"].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
@@ -126,6 +134,12 @@ namespace GUI.UserControls
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime dt = DateTime.Now;
+            labelTime.Text = dt.ToString("dd/MM/yyyy HH:MM:ss");
         }
     }
 }

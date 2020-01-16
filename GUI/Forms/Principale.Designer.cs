@@ -56,9 +56,6 @@
             this.userToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilisateurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monitoringToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dépensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.allDépensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newDépenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -105,11 +102,10 @@
             this.venteToolStripMenuItem,
             this.stockToolStripMenuItem2,
             this.databaseManagerToolStripMenuItem,
-            this.userToolStripMenuItem,
-            this.dépensesToolStripMenuItem});
+            this.userToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(9, 9);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(924, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(719, 29);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -336,28 +332,6 @@
             this.monitoringToolStripMenuItem.Text = "Monitoring";
             this.monitoringToolStripMenuItem.Click += new System.EventHandler(this.monitoringToolStripMenuItem_Click);
             // 
-            // dépensesToolStripMenuItem
-            // 
-            this.dépensesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.allDépensesToolStripMenuItem,
-            this.newDépenseToolStripMenuItem});
-            this.dépensesToolStripMenuItem.Image = global::GUI.Properties.Resources.Receipt_48px;
-            this.dépensesToolStripMenuItem.Name = "dépensesToolStripMenuItem";
-            this.dépensesToolStripMenuItem.Size = new System.Drawing.Size(113, 25);
-            this.dépensesToolStripMenuItem.Text = "Dépenses";
-            // 
-            // allDépensesToolStripMenuItem
-            // 
-            this.allDépensesToolStripMenuItem.Name = "allDépensesToolStripMenuItem";
-            this.allDépensesToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
-            this.allDépensesToolStripMenuItem.Text = "All Dépenses";
-            // 
-            // newDépenseToolStripMenuItem
-            // 
-            this.newDépenseToolStripMenuItem.Name = "newDépenseToolStripMenuItem";
-            this.newDépenseToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
-            this.newDépenseToolStripMenuItem.Text = "New Dépense";
-            // 
             // panel2
             // 
             this.panel2.Location = new System.Drawing.Point(0, 49);
@@ -406,10 +380,7 @@
         private System.Windows.Forms.ToolStripMenuItem userToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem utilisateurToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem monitoringToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dépensesToolStripMenuItem;
         public System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.ToolStripMenuItem allDépensesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newDépenseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem remboursementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem approvisionnementToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem articlesToolStripMenuItem;

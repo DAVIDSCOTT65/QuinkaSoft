@@ -501,6 +501,7 @@
             this.dgAgent.Size = new System.Drawing.Size(863, 584);
             this.dgAgent.TabIndex = 39;
             this.toolTip1.SetToolTip(this.dgAgent, "Double cliqué pour modifier");
+            this.dgAgent.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgAgent_CellContentClick);
             this.dgAgent.SelectionChanged += new System.EventHandler(this.dgAgent_SelectionChanged);
             this.dgAgent.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgAgent_MouseDoubleClick);
             // 

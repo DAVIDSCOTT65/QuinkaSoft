@@ -131,5 +131,10 @@ namespace GUI.UserControls
                 MessageBox.Show("L'erreur suivant est survenue : " + ex.Message);
             }
         }
+
+        private void dgAgent_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

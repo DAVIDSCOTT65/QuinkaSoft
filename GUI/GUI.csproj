@@ -59,6 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\CircularButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\CircularPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Classes\ClsMonitoring.cs" />
     <Compile Include="Classes\DGVPrinter.cs" />
     <Compile Include="Classes\DynamicClasses.cs" />
@@ -582,6 +588,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Ros.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pass2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images_8 %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images_5 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dav1.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

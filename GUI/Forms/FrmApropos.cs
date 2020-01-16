@@ -31,5 +31,20 @@ namespace GUI.Forms
         {
             this.Close();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void circularPictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void circularButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
