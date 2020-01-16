@@ -28,67 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.lblRuptSoon = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.lblRecouvrement = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.lblCredit = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.linkLabel5 = new System.Windows.Forms.LinkLabel();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.linkLabel6 = new System.Windows.Forms.LinkLabel();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.linkLabel7 = new System.Windows.Forms.LinkLabel();
             this.lblDormant = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.linkLabel8 = new System.Windows.Forms.LinkLabel();
+            this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.lblPop = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.lblRupture = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.chartWeek = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label3 = new System.Windows.Forms.Label();
+            this.yearCombo = new System.Windows.Forms.ComboBox();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.panel13.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartWeek)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -110,7 +107,7 @@
             this.panel7.Controls.Add(this.lblRuptSoon);
             this.panel7.Controls.Add(this.label15);
             this.panel7.ForeColor = System.Drawing.Color.Black;
-            this.panel7.Location = new System.Drawing.Point(347, 106);
+            this.panel7.Location = new System.Drawing.Point(309, 260);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(266, 100);
             this.panel7.TabIndex = 84;
@@ -127,6 +124,16 @@
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Voir les détails";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::GUI.Properties.Resources.out_of_stock_1727162_1469027;
+            this.pictureBox8.Location = new System.Drawing.Point(188, 18);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(75, 64);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 3;
+            this.pictureBox8.TabStop = false;
             // 
             // lblRuptSoon
             // 
@@ -157,7 +164,7 @@
             this.panel8.Controls.Add(this.lblRecouvrement);
             this.panel8.Controls.Add(this.label17);
             this.panel8.ForeColor = System.Drawing.Color.Black;
-            this.panel8.Location = new System.Drawing.Point(637, 106);
+            this.panel8.Location = new System.Drawing.Point(18, 376);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(266, 100);
             this.panel8.TabIndex = 84;
@@ -174,6 +181,16 @@
             this.linkLabel3.TabStop = true;
             this.linkLabel3.Text = "Voir la liste";
             this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::GUI.Properties.Resources.Receive_Cash_64px;
+            this.pictureBox9.Location = new System.Drawing.Point(179, 18);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(75, 64);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 3;
+            this.pictureBox9.TabStop = false;
             // 
             // lblRecouvrement
             // 
@@ -204,7 +221,7 @@
             this.panel9.Controls.Add(this.lblCredit);
             this.panel9.Controls.Add(this.label19);
             this.panel9.ForeColor = System.Drawing.Color.Black;
-            this.panel9.Location = new System.Drawing.Point(928, 106);
+            this.panel9.Location = new System.Drawing.Point(309, 376);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(266, 100);
             this.panel9.TabIndex = 85;
@@ -221,6 +238,16 @@
             this.linkLabel4.TabStop = true;
             this.linkLabel4.Text = "Voir la liste";
             this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::GUI.Properties.Resources.Cash_in_Hand_64px;
+            this.pictureBox10.Location = new System.Drawing.Point(179, 18);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(75, 64);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox10.TabIndex = 3;
+            this.pictureBox10.TabStop = false;
             // 
             // lblCredit
             // 
@@ -243,98 +270,6 @@
             this.label19.TabIndex = 0;
             this.label19.Text = "Dette :";
             // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.SeaGreen;
-            this.panel10.Controls.Add(this.linkLabel5);
-            this.panel10.Controls.Add(this.pictureBox11);
-            this.panel10.Controls.Add(this.label20);
-            this.panel10.Controls.Add(this.label21);
-            this.panel10.ForeColor = System.Drawing.Color.Black;
-            this.panel10.Location = new System.Drawing.Point(928, 222);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(266, 100);
-            this.panel10.TabIndex = 89;
-            // 
-            // linkLabel5
-            // 
-            this.linkLabel5.AutoSize = true;
-            this.linkLabel5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel5.LinkColor = System.Drawing.Color.White;
-            this.linkLabel5.Location = new System.Drawing.Point(61, 73);
-            this.linkLabel5.Name = "linkLabel5";
-            this.linkLabel5.Size = new System.Drawing.Size(77, 17);
-            this.linkLabel5.TabIndex = 83;
-            this.linkLabel5.TabStop = true;
-            this.linkLabel5.Text = "Voir la liste";
-            // 
-            // label20
-            // 
-            this.label20.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(17, 54);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(104, 19);
-            this.label20.TabIndex = 1;
-            this.label20.Text = "0";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(13, 18);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(144, 19);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "Rupture de stock :";
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.SeaGreen;
-            this.panel11.Controls.Add(this.linkLabel6);
-            this.panel11.Controls.Add(this.pictureBox12);
-            this.panel11.Controls.Add(this.label22);
-            this.panel11.Controls.Add(this.label23);
-            this.panel11.ForeColor = System.Drawing.Color.Black;
-            this.panel11.Location = new System.Drawing.Point(637, 222);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(266, 100);
-            this.panel11.TabIndex = 87;
-            // 
-            // linkLabel6
-            // 
-            this.linkLabel6.AutoSize = true;
-            this.linkLabel6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel6.LinkColor = System.Drawing.Color.White;
-            this.linkLabel6.Location = new System.Drawing.Point(61, 73);
-            this.linkLabel6.Name = "linkLabel6";
-            this.linkLabel6.Size = new System.Drawing.Size(77, 17);
-            this.linkLabel6.TabIndex = 83;
-            this.linkLabel6.TabStop = true;
-            this.linkLabel6.Text = "Voir la liste";
-            // 
-            // label22
-            // 
-            this.label22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(17, 54);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(104, 19);
-            this.label22.TabIndex = 1;
-            this.label22.Text = "0";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(13, 18);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(144, 19);
-            this.label23.TabIndex = 0;
-            this.label23.Text = "Rupture de stock :";
-            // 
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.SeaGreen;
@@ -344,10 +279,30 @@
             this.panel12.Controls.Add(this.lblDormant);
             this.panel12.Controls.Add(this.label25);
             this.panel12.ForeColor = System.Drawing.Color.Black;
-            this.panel12.Location = new System.Drawing.Point(347, 222);
+            this.panel12.Location = new System.Drawing.Point(309, 499);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(266, 100);
             this.panel12.TabIndex = 88;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::GUI.Properties.Resources.Star_52px1;
+            this.pictureBox3.Location = new System.Drawing.Point(228, 36);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(34, 37);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 85;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::GUI.Properties.Resources.Star_52px1;
+            this.pictureBox2.Location = new System.Drawing.Point(188, 36);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(34, 37);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 84;
+            this.pictureBox2.TabStop = false;
             // 
             // linkLabel7
             // 
@@ -392,10 +347,20 @@
             this.panel13.Controls.Add(this.lblPop);
             this.panel13.Controls.Add(this.label27);
             this.panel13.ForeColor = System.Drawing.Color.Black;
-            this.panel13.Location = new System.Drawing.Point(58, 222);
+            this.panel13.Location = new System.Drawing.Point(20, 499);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(266, 100);
             this.panel13.TabIndex = 86;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GUI.Properties.Resources.Star_52px;
+            this.pictureBox1.Location = new System.Drawing.Point(220, 36);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 37);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 84;
+            this.pictureBox1.TabStop = false;
             // 
             // linkLabel8
             // 
@@ -409,6 +374,16 @@
             this.linkLabel8.TabStop = true;
             this.linkLabel8.Text = "Voir la liste";
             this.linkLabel8.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel8_LinkClicked);
+            // 
+            // pictureBox14
+            // 
+            this.pictureBox14.Image = global::GUI.Properties.Resources.Star_50px;
+            this.pictureBox14.Location = new System.Drawing.Point(179, 36);
+            this.pictureBox14.Name = "pictureBox14";
+            this.pictureBox14.Size = new System.Drawing.Size(34, 37);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox14.TabIndex = 3;
+            this.pictureBox14.TabStop = false;
             // 
             // lblPop
             // 
@@ -439,7 +414,7 @@
             this.panel6.Controls.Add(this.lblRupture);
             this.panel6.Controls.Add(this.label13);
             this.panel6.ForeColor = System.Drawing.Color.Black;
-            this.panel6.Location = new System.Drawing.Point(58, 106);
+            this.panel6.Location = new System.Drawing.Point(20, 260);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(266, 100);
             this.panel6.TabIndex = 82;
@@ -456,6 +431,16 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Voir les détails";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::GUI.Properties.Resources.Out_of_stock_512;
+            this.pictureBox7.Location = new System.Drawing.Point(179, 18);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(75, 64);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 3;
+            this.pictureBox7.TabStop = false;
             // 
             // lblRupture
             // 
@@ -479,112 +464,78 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "Rupture de stock :";
             // 
-            // pictureBox11
+            // label2
             // 
-            this.pictureBox11.Location = new System.Drawing.Point(179, 18);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(75, 64);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox11.TabIndex = 3;
-            this.pictureBox11.TabStop = false;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(447, 665);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(205, 21);
+            this.label2.TabIndex = 89;
+            this.label2.Text = "D@vCode Concept 2020";
             // 
-            // pictureBox10
+            // panel1
             // 
-            this.pictureBox10.Image = global::GUI.Properties.Resources.Cash_in_Hand_64px;
-            this.pictureBox10.Location = new System.Drawing.Point(179, 18);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(75, 64);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox10.TabIndex = 3;
-            this.pictureBox10.TabStop = false;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.yearCombo);
+            this.panel1.Controls.Add(this.chartWeek);
+            this.panel1.Location = new System.Drawing.Point(581, 186);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(739, 476);
+            this.panel1.TabIndex = 91;
             // 
-            // pictureBox12
+            // chartWeek
             // 
-            this.pictureBox12.Location = new System.Drawing.Point(179, 18);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(75, 64);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox12.TabIndex = 3;
-            this.pictureBox12.TabStop = false;
+            this.chartWeek.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea1.Name = "ChartAreas1";
+            this.chartWeek.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartWeek.Legends.Add(legend1);
+            this.chartWeek.Location = new System.Drawing.Point(85, 88);
+            this.chartWeek.Name = "chartWeek";
+            this.chartWeek.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
+            series1.ChartArea = "ChartAreas1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
+            series1.Legend = "Legend1";
+            series1.Name = "Variation";
+            series1.YValuesPerPoint = 2;
+            this.chartWeek.Series.Add(series1);
+            this.chartWeek.Size = new System.Drawing.Size(632, 359);
+            this.chartWeek.TabIndex = 91;
+            this.chartWeek.Text = "chart1";
+            title1.Name = "Week chart";
+            title1.Text = "Analyse des ventes de l\'année";
+            this.chartWeek.Titles.Add(title1);
             // 
-            // pictureBox9
+            // label3
             // 
-            this.pictureBox9.Image = global::GUI.Properties.Resources.Receive_Cash_64px;
-            this.pictureBox9.Location = new System.Drawing.Point(179, 18);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(75, 64);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 3;
-            this.pictureBox9.TabStop = false;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(13, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 21);
+            this.label3.TabIndex = 139;
+            this.label3.Text = "Year";
             // 
-            // pictureBox3
+            // yearCombo
             // 
-            this.pictureBox3.Image = global::GUI.Properties.Resources.Star_52px1;
-            this.pictureBox3.Location = new System.Drawing.Point(228, 36);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(34, 37);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 85;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::GUI.Properties.Resources.Star_52px1;
-            this.pictureBox2.Location = new System.Drawing.Point(188, 36);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(34, 37);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 84;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::GUI.Properties.Resources.out_of_stock_1727162_1469027;
-            this.pictureBox8.Location = new System.Drawing.Point(188, 18);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(75, 64);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 3;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GUI.Properties.Resources.Star_52px;
-            this.pictureBox1.Location = new System.Drawing.Point(220, 36);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 37);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 84;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox14
-            // 
-            this.pictureBox14.Image = global::GUI.Properties.Resources.Star_50px;
-            this.pictureBox14.Location = new System.Drawing.Point(179, 36);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(34, 37);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox14.TabIndex = 3;
-            this.pictureBox14.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::GUI.Properties.Resources.Out_of_stock_512;
-            this.pictureBox7.Location = new System.Drawing.Point(179, 18);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(75, 64);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 3;
-            this.pictureBox7.TabStop = false;
+            this.yearCombo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.yearCombo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.yearCombo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.yearCombo.FormattingEnabled = true;
+            this.yearCombo.Location = new System.Drawing.Point(66, 15);
+            this.yearCombo.Name = "yearCombo";
+            this.yearCombo.Size = new System.Drawing.Size(191, 29);
+            this.yearCombo.TabIndex = 138;
             // 
             // UC_DashBord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.panel10);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel9);
-            this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.panel7);
@@ -598,30 +549,27 @@
             this.Load += new System.EventHandler(this.UC_DashBord_Load);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
-            this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartWeek)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -650,16 +598,6 @@
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.Label lblCredit;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.LinkLabel linkLabel5;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.LinkLabel linkLabel6;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.LinkLabel linkLabel7;
         private System.Windows.Forms.Label lblDormant;
@@ -672,5 +610,10 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartWeek;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox yearCombo;
     }
 }

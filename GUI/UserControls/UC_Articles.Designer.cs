@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Articles));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -51,10 +52,9 @@
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelGrid = new System.Windows.Forms.Panel();
-            this.labStatus = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.button3 = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgArticle)).BeginInit();
             this.panelGrid.SuspendLayout();
@@ -90,6 +90,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(40, 28);
             this.button1.TabIndex = 77;
+            this.toolTip1.SetToolTip(this.button1, "Nouvel article");
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -160,6 +161,7 @@
             this.dgArticle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgArticle.Size = new System.Drawing.Size(1334, 634);
             this.dgArticle.TabIndex = 59;
+            this.dgArticle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgArticle_CellContentClick);
             this.dgArticle.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgArticle_MouseDoubleClick);
             // 
             // ColNum
@@ -265,8 +267,6 @@
             // panelGrid
             // 
             this.panelGrid.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelGrid.Controls.Add(this.labStatus);
-            this.panelGrid.Controls.Add(this.progressBar1);
             this.panelGrid.Controls.Add(this.button3);
             this.panelGrid.Controls.Add(this.label1);
             this.panelGrid.Controls.Add(this.button1);
@@ -278,27 +278,6 @@
             this.panelGrid.Name = "panelGrid";
             this.panelGrid.Size = new System.Drawing.Size(1342, 700);
             this.panelGrid.TabIndex = 75;
-            // 
-            // labStatus
-            // 
-            this.labStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.labStatus.AutoSize = true;
-            this.labStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labStatus.Location = new System.Drawing.Point(659, 327);
-            this.labStatus.Name = "labStatus";
-            this.labStatus.Size = new System.Drawing.Size(104, 17);
-            this.labStatus.TabIndex = 83;
-            this.labStatus.Text = "Prossessing...0%";
-            this.labStatus.Visible = false;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(575, 349);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(191, 23);
-            this.progressBar1.TabIndex = 84;
-            this.progressBar1.Visible = false;
             // 
             // button3
             // 
@@ -312,6 +291,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(40, 28);
             this.button3.TabIndex = 81;
+            this.toolTip1.SetToolTip(this.button3, "Exporter en excel");
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -351,8 +331,6 @@
         public System.Windows.Forms.DataGridView dgArticle;
         public System.Windows.Forms.Panel panelGrid;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label labStatus;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColCode;
@@ -367,5 +345,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

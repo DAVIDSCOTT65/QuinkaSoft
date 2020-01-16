@@ -113,5 +113,10 @@ namespace GUI.UserControls
         {
             dgArticle.DataSource = art.Research(serchTxt.Text);
         }
+
+        private void dgArticle_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

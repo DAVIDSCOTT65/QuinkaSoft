@@ -102,22 +102,22 @@ namespace GUI.UserControls
         }
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            int progress = ((DataParameter)e.Argument).progress;
-            int delay = ((DataParameter)e.Argument).delay;
-            int idex = 1;
-            try
-            {
-                for (int i = 0; i < progress; i++)
-                {
-                    backgroundWorker1.ReportProgress(idex++ * 100 / progress, string.Format("Progress data {0}", i));
-                    Thread.Sleep(delay);
-                }
-                ExportExcel();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //int progress = ((DataParameter)e.Argument).progress;
+            //int delay = ((DataParameter)e.Argument).delay;
+            //int idex = 1;
+            //try
+            //{
+            //    for (int i = 0; i < progress; i++)
+            //    {
+            //        backgroundWorker1.ReportProgress(idex++ * 100 / progress, string.Format("Progress data {0}", i));
+            //        Thread.Sleep(delay);
+            //    }
+            //    ExportExcel();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
         void ExportExcel()
         {
@@ -150,18 +150,12 @@ namespace GUI.UserControls
 
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            progressBar1.Value = e.ProgressPercentage;
-            labStatus.Text = string.Format("Processing...{0}", e.ProgressPercentage);
-            progressBar1.Update();
+           
         }
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            if (e.Error == null)
-            {
-                Thread.Sleep(100);
-                labStatus.Text = "Your data has been successfully exported";
-            }
+           
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -189,6 +183,11 @@ namespace GUI.UserControls
         void Search(HistoriqueES art)
         {
             dgHistorique.DataSource = art.Research(serchTxt.Text);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -10,11 +10,15 @@ using System.Windows.Forms;
 using ArticlesLibrary;
 using GUI.Forms;
 using CreanceLibrary;
+using ManageSingleConnexion;
+using System.Data.SqlClient;
+using GUI.Classes;
 
 namespace GUI.UserControls
 {
     public partial class UC_DashBord : UserControl
     {
+        DynamicClasses dn = new DynamicClasses();
         public UC_DashBord()
         {
             InitializeComponent();
@@ -22,7 +26,41 @@ namespace GUI.UserControls
 
         private void UC_DashBord_Load(object sender, EventArgs e)
         {
+            dn.chargeNomsCombo(yearCombo, "Annee", "SELECT_YEAR");
+            yearCombo.SelectedIndex = 0;
             ArticleRuptures();
+            ChartCotisation();
+
+        }
+        void ChartCotisation()
+        {
+            try
+            {
+                if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
+                    ImplementeConnexion.Instance.Conn.Open();
+                SqlDataAdapter ad = new SqlDataAdapter("SELECT Mois,SUM(PVT) Montant  FROM Affichage_Details_Sortie /*WHERE Annee='" + yearCombo.Text.Trim() + "'*/ GROUP BY Mois", (SqlConnection)ImplementeConnexion.Instance.Conn);
+                DataTable dt = new DataTable();
+                ad.Fill(dt);
+                chartWeek.DataSource = dt;
+
+
+
+
+                chartWeek.ChartAreas["ChartAreas1"].AxisX.Title = "Mois";
+                chartWeek.ChartAreas["ChartAreas1"].AxisX.Title = "Montant";
+
+                chartWeek.Series["Variation"].XValueMember = "Mois";
+                chartWeek.Series["Variation"].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Date;
+                chartWeek.Series["Variation"].YValueMembers = "Montant";
+                chartWeek.Series["Variation"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Une erreur est survenue : " + ex.Message);
+            }
         }
         private void ArticleRuptures()
         {
@@ -83,6 +121,11 @@ namespace GUI.UserControls
             frm.procedure = "SELECT_STOCK_FIX";
             frm.label3.Text = "Liste des articles jamais vendus";
             frm.ShowDialog();
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
