@@ -40,6 +40,8 @@
             this.logo = new System.Windows.Forms.PictureBox();
             this.btnParc = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.phone3 = new System.Windows.Forms.MaskedTextBox();
+            this.phone2 = new System.Windows.Forms.MaskedTextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.phoneTxt = new System.Windows.Forms.MaskedTextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -59,8 +61,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.phone2 = new System.Windows.Forms.MaskedTextBox();
-            this.phone3 = new System.Windows.Forms.MaskedTextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.dgMaison = new System.Windows.Forms.DataGridView();
             this.ColId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -147,6 +147,7 @@
             // 
             // logo
             // 
+            this.logo.BackColor = System.Drawing.Color.Transparent;
             this.logo.Image = ((System.Drawing.Image)(resources.GetObject("logo.Image")));
             this.logo.Location = new System.Drawing.Point(7, 26);
             this.logo.Name = "logo";
@@ -201,6 +202,24 @@
             this.groupBox1.Size = new System.Drawing.Size(561, 363);
             this.groupBox1.TabIndex = 164;
             this.groupBox1.TabStop = false;
+            // 
+            // phone3
+            // 
+            this.phone3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.phone3.Location = new System.Drawing.Point(406, 143);
+            this.phone3.Mask = "+256000000000";
+            this.phone3.Name = "phone3";
+            this.phone3.Size = new System.Drawing.Size(129, 27);
+            this.phone3.TabIndex = 88;
+            // 
+            // phone2
+            // 
+            this.phone2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.phone2.Location = new System.Drawing.Point(268, 143);
+            this.phone2.Mask = "+243000000000";
+            this.phone2.Name = "phone2";
+            this.phone2.Size = new System.Drawing.Size(122, 27);
+            this.phone2.TabIndex = 87;
             // 
             // label12
             // 
@@ -395,24 +414,6 @@
             this.label13.Size = new System.Drawing.Size(107, 21);
             this.label13.TabIndex = 2;
             this.label13.Text = "Siège social :";
-            // 
-            // phone2
-            // 
-            this.phone2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.phone2.Location = new System.Drawing.Point(268, 143);
-            this.phone2.Mask = "+243000000000";
-            this.phone2.Name = "phone2";
-            this.phone2.Size = new System.Drawing.Size(122, 27);
-            this.phone2.TabIndex = 87;
-            // 
-            // phone3
-            // 
-            this.phone3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.phone3.Location = new System.Drawing.Point(406, 143);
-            this.phone3.Mask = "+256000000000";
-            this.phone3.Name = "phone3";
-            this.phone3.Size = new System.Drawing.Size(129, 27);
-            this.phone3.TabIndex = 88;
             // 
             // btnSave
             // 
@@ -618,7 +619,7 @@
             this.Controls.Add(this.label7);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmMaison";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmMaison";

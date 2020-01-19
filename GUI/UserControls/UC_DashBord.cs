@@ -46,7 +46,7 @@ namespace GUI.UserControls
             {
                 if (ImplementeConnexion.Instance.Conn.State == ConnectionState.Closed)
                     ImplementeConnexion.Instance.Conn.Open();
-                SqlDataAdapter ad = new SqlDataAdapter("SELECT Mois,SUM(PVT) Montant  FROM Affichage_Details_Sortie /*WHERE Annee='" + yearCombo.Text.Trim() + "'*/ GROUP BY Mois", (SqlConnection)ImplementeConnexion.Instance.Conn);
+                SqlDataAdapter ad = new SqlDataAdapter("SELECT Mois,SUM(PVT) Montant  FROM Affichage_Details_Sortie WHERE Annee='" + yearCombo.Text.Trim() + "' GROUP BY Mois", (SqlConnection)ImplementeConnexion.Instance.Conn);
                 DataTable dt = new DataTable();
                 ad.Fill(dt);
                 chartWeek.DataSource = dt;
@@ -140,6 +140,11 @@ namespace GUI.UserControls
         {
             DateTime dt = DateTime.Now;
             labelTime.Text = dt.ToString("dd/MM/yyyy HH:MM:ss");
+        }
+
+        private void yearCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ChartCotisation();
         }
     }
 }
