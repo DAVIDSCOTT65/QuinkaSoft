@@ -40,8 +40,9 @@ namespace ManageSingleConnexion
             switch (connexionType)
             {
                 case ConnexionType.SQLServer:
-                    _conn = new SqlConnection(string.Format("Data source={0};Initial catalog={1};User ID={2};Password={3}",
-                        connexion.Serveur, connexion.Database, connexion.User, connexion.Password));
+                    _conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\QSTOCK DATABASE\QUINKA_STOCK.mdf;Integrated Security=True");
+                    //_conn = new SqlConnection(string.Format("Data source={0};Initial catalog={1};User ID={2};Password={3}",
+                    //    connexion.Serveur, connexion.Database, connexion.User, connexion.Password));
                     break;
                 //case ConnexionType.MySQL:
                 //    _conn = new MySqlConnection(string.Format("Server={0};Database={1};UserID={2};Password={3}",

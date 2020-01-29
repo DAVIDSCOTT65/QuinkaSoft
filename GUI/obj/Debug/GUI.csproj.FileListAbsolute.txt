@@ -68,3 +68,5 @@ E:\DAVID\PROJETBDD\QuinkaStock\GUI\obj\Debug\GUI.Forms.FrmAgent.resources
 E:\DAVID\PROJETBDD\QuinkaStock\GUI\obj\Debug\GUI.UserControls.UC_Monitoring.resources
 E:\DAVID\PROJETBDD\QuinkaStock\GUI\obj\Debug\GUI.Forms.FrmBackRestore.resources
 E:\DAVID\PROJETBDD\QuinkaStock\GUI\obj\Debug\GUI.Forms.FrmApropos.resources
+E:\DAVID\PROJETBDD\QuinkaStock\GUI\bin\Debug\QUINKA_STOCK.mdf
+E:\DAVID\PROJETBDD\QuinkaStock\GUI\bin\Debug\QUINKA_STOCK_log.ldf

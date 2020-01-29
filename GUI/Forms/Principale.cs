@@ -29,7 +29,7 @@ namespace GUI
         {
             FrmBackRestore frm = new FrmBackRestore();
             Deconnexion();
-            frm.BackUpDefault();
+            //frm.BackUpDefault();
             Application.Exit();
         }
         private void Deconnexion()

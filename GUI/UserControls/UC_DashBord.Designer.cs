@@ -82,8 +82,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.avatarPic = new GUI.Classes.CircularPictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.avatarPic = new GUI.Classes.CircularPictureBox();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel8.SuspendLayout();
@@ -536,7 +536,7 @@
             this.chartWeek.TabIndex = 91;
             this.chartWeek.Text = "chart1";
             title1.Name = "Week chart";
-            title1.Text = "Analyse des ventes de l\'année";
+            title1.Text = "Statistique des ventes de l\'année";
             this.chartWeek.Titles.Add(title1);
             // 
             // panel2
@@ -657,6 +657,16 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(622, 668);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(168, 17);
+            this.label2.TabIndex = 89;
+            this.label2.Text = "D@vCode Concept 2020";
+            // 
             // avatarPic
             // 
             this.avatarPic.Image = global::GUI.Properties.Resources.Pass2;
@@ -666,16 +676,6 @@
             this.avatarPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.avatarPic.TabIndex = 0;
             this.avatarPic.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(540, 670);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 17);
-            this.label2.TabIndex = 89;
-            this.label2.Text = "D@vCode Concept 2020";
             // 
             // UC_DashBord
             // 
