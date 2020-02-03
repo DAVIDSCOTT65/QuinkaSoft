@@ -75,6 +75,7 @@
             this.lblFonction = new System.Windows.Forms.Label();
             this.lblNom = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.avatarPic = new GUI.Classes.CircularPictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.labelTime = new System.Windows.Forms.Label();
@@ -83,7 +84,6 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
-            this.avatarPic = new GUI.Classes.CircularPictureBox();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel8.SuspendLayout();
@@ -102,9 +102,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartWeek)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatarPic)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.avatarPic)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -598,6 +598,16 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "Fonction :";
             // 
+            // avatarPic
+            // 
+            this.avatarPic.Image = global::GUI.Properties.Resources.Pass2;
+            this.avatarPic.Location = new System.Drawing.Point(449, 3);
+            this.avatarPic.Name = "avatarPic";
+            this.avatarPic.Size = new System.Drawing.Size(100, 83);
+            this.avatarPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.avatarPic.TabIndex = 0;
+            this.avatarPic.TabStop = false;
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.SeaGreen;
@@ -667,16 +677,6 @@
             this.label2.TabIndex = 89;
             this.label2.Text = "D@vCode Concept 2020";
             // 
-            // avatarPic
-            // 
-            this.avatarPic.Image = global::GUI.Properties.Resources.Pass2;
-            this.avatarPic.Location = new System.Drawing.Point(449, 3);
-            this.avatarPic.Name = "avatarPic";
-            this.avatarPic.Size = new System.Drawing.Size(100, 83);
-            this.avatarPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.avatarPic.TabIndex = 0;
-            this.avatarPic.TabStop = false;
-            // 
             // UC_DashBord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -723,11 +723,11 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.avatarPic)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.avatarPic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

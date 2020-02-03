@@ -98,5 +98,10 @@ namespace GUI.Forms
             frm.Sortie_Liste_Dette_Client(idEntete);
             frm.ShowDialog();
         }
+
+        private void clientCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

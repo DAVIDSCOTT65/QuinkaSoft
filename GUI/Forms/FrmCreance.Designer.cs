@@ -62,6 +62,7 @@
             this.clientCombo.Name = "clientCombo";
             this.clientCombo.Size = new System.Drawing.Size(399, 29);
             this.clientCombo.TabIndex = 165;
+            this.clientCombo.SelectedIndexChanged += new System.EventHandler(this.clientCombo_SelectedIndexChanged);
             // 
             // label10
             // 
